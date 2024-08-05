@@ -10,13 +10,15 @@ public class No_80 {
     }
 
     public static int removeDuplicates(int[] nums) {
-        Map<Integer, Integer> map = new HashMap<>();
-        int left = 0;
-        for(int right = 0; right < nums.length; right++) {
-            nums[left] = nums[right];
-            if (map.getOrDefault(nums[right], 0) <= 1) {
-                map.put(nums[right], map.getOrDefault(nums[right], 0) + 1);
-                left++;
+        int n = nums.length;
+        if (n < 2) {
+            return n;
+        }
+
+        int left = 2;
+        for (int right = 2; right < n; right++) {
+            if (nums[right] != nums[left - 2]) {
+                nums[left++] = nums[right];
             }
         }
         return left;
