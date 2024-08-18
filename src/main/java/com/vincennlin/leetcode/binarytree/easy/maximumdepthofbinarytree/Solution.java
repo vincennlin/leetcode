@@ -1,5 +1,8 @@
 package com.vincennlin.leetcode.binarytree.easy.maximumdepthofbinarytree;
 //104
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -16,7 +19,7 @@ package com.vincennlin.leetcode.binarytree.easy.maximumdepthofbinarytree;
  * }
  */
 class Solution {
-    public class TreeNode {
+    public static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
@@ -34,7 +37,23 @@ class Solution {
         }
     }
 
+    private int maxDepth = 1;
+
+    public void traverse (TreeNode node, int depth) {
+        if (node.left == null && node.right == null) {
+            if (maxDepth < depth) maxDepth = depth;
+        }
+        if (node.left != null) {
+            traverse(node.left, depth + 1);
+        }
+        if (node.right != null) {
+            traverse(node.right, depth + 1);
+        }
+    }
+
     public int maxDepth(TreeNode root) {
-        return 0;
+        if (root == null) return 0;
+        traverse(root, 1);
+        return this.maxDepth;
     }
 }
