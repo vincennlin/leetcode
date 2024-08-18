@@ -1,7 +1,6 @@
-package com.vincennlin.leetcode.heap.kthlargestelementinanarray;
+package com.vincennlin.leetcode.heap.medium.kthlargestelementinanarray;
 
 public class Main {
-
     public static void main(String[] args) {
         Solution solution = new Solution();
         int[] nums = {3,2,1,5,6,4};

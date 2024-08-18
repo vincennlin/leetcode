@@ -1,17 +1,10 @@
-package com.vincennlin.leetcode.Array;
+package com.vincennlin.leetcode.array.easy.majorityelement;
 
 import java.util.HashMap;
 import java.util.Map;
-
-public class No_169 {
-
-    public static void main(String[] args) {
-        int[] nums = {2,2,1,1,1,2,2};
-        int result = majorityElement(nums);
-        System.out.println(result);
-    }
-
-    public static int majorityElement(int[] nums) {
+//169
+class Solution {
+    public int majorityElement(int[] nums) {
 
         Map<Integer, Integer> map = new HashMap<>();
 

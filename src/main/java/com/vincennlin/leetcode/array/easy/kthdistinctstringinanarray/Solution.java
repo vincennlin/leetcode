@@ -1,16 +1,10 @@
-package com.vincennlin.leetcode.Array;
+package com.vincennlin.leetcode.array.easy.kthdistinctstringinanarray;
 
 import java.util.HashMap;
 import java.util.Map;
-
-public class No_2053 {
-
-    public static void main(String[] args) {
-        String[] arr = {"d","b","c","b","c","a"};
-        System.out.println(kthDistinct(arr, 1));
-    }
-
-    public static String kthDistinct(String[] arr, int k) {
+//2053
+class Solution {
+    public String kthDistinct(String[] arr, int k) {
         Map<String, Integer> map = new HashMap<>();
 
         for (String str : arr) {
