@@ -22,18 +22,23 @@ class Solution {
         }
     }
 
-    private int count;
-
-    public void traverse(TreeNode currentNode) {
-        if (currentNode == null) return;
-        count++;
-        if (currentNode.left != null) traverse(currentNode.left);
-        if (currentNode.right != null) traverse(currentNode.right);
+    public int getHeight(TreeNode currentNode) {
+        int height = 0;
+        while (currentNode != null) {
+            currentNode = currentNode.left;
+            height++;
+        }
+        return height;
     }
 
     public int countNodes(TreeNode root) {
-        count = 0;
-        traverse(root);
-        return count;
+        if (root == null) return 0;
+        int leftHeight = getHeight(root.left);
+        int rightHeight = getHeight(root.right);
+        if (leftHeight == rightHeight) {
+            return (1 << leftHeight) + countNodes(root.right);
+        } else {
+            return (1 << rightHeight) + countNodes(root.left);
+        }
     }
 }
