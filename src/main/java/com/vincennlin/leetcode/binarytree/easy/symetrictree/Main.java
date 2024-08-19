@@ -7,10 +7,9 @@ public class Main {
         Solution.TreeNode root = new Solution.TreeNode(1);
         root.left = new Solution.TreeNode(2);
         root.right = new Solution.TreeNode(2);
-        root.left.left = new Solution.TreeNode(3);
-        root.left.right = new Solution.TreeNode(4);
-        root.right.left = new Solution.TreeNode(4);
-        root.right.right = new Solution.TreeNode(3);
+        root.left.left = null;
+        root.left.right = new Solution.TreeNode(3);
+        root.right.left = new Solution.TreeNode(3);
 
         System.out.println(solution.isSymmetric(root));
     }
