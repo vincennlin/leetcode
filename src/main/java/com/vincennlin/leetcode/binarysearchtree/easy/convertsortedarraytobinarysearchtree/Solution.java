@@ -18,7 +18,17 @@ class Solution {
             this.right = right;
         }
     }
+
+    public TreeNode buildTree(int[] nums, int left, int right) {
+        if (left > right) return null;
+        int mid = (left + right) / 2;
+        TreeNode currentNode = new TreeNode(nums[mid]);
+        currentNode.left = buildTree(nums, left, mid - 1);
+        currentNode.right = buildTree(nums, mid + 1, right);
+        return currentNode;
+    }
+
     public TreeNode sortedArrayToBST(int[] nums) {
-        return null;
+        return buildTree(nums, 0, nums.length - 1);
     }
 }
