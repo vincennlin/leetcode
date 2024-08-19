@@ -1,4 +1,7 @@
 package com.vincennlin.leetcode.binarytree.easy.countcompletetreenodes;
+
+import com.sun.source.tree.Tree;
+
 //222
 class Solution {
     public static class TreeNode {
@@ -19,7 +22,18 @@ class Solution {
         }
     }
 
+    private int count;
+
+    public void traverse(TreeNode currentNode) {
+        if (currentNode == null) return;
+        count++;
+        if (currentNode.left != null) traverse(currentNode.left);
+        if (currentNode.right != null) traverse(currentNode.right);
+    }
+
     public int countNodes(TreeNode root) {
-        return 0;
+        count = 0;
+        traverse(root);
+        return count;
     }
 }
