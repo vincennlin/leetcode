@@ -24,5 +24,9 @@ public class Main {
         String pattern4 = "abc";
         String s4 = "dog cat fish";
         System.out.println(solution.wordPattern(pattern4, s4)); // Output: true
+
+        String pattern5 = "abba";
+        String s5 = "dog dog dog dog";
+        System.out.println(solution.wordPattern(pattern5, s5));
     }
 }
