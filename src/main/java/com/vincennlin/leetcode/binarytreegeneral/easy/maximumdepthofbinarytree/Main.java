@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.binarytree.easy.maximumdepthofbinarytree;
+package com.vincennlin.leetcode.binarytreegeneral.easy.maximumdepthofbinarytree;
 
 public class Main {
 

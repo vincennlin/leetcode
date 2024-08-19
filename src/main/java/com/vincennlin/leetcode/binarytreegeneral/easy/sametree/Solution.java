@@ -1,8 +1,5 @@
-package com.vincennlin.leetcode.binarytree.easy.symetrictree;
-
-import java.util.LinkedList;
-import java.util.Queue;
-
+package com.vincennlin.leetcode.binarytreegeneral.easy.sametree;
+//100
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -19,7 +16,7 @@ import java.util.Queue;
  * }
  */
 class Solution {
-    public static class TreeNode {
+    public class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
@@ -37,16 +34,14 @@ class Solution {
         }
     }
 
-    public boolean isMirror(TreeNode leftNode, TreeNode rightNode) {
-        if (leftNode == null && rightNode == null) return true;
-        if (leftNode == null || rightNode == null) return false;
-        return (leftNode.val == rightNode.val)
-                && isMirror(leftNode.left, rightNode.right)
-                && isMirror(leftNode.right, rightNode.left);
-    }
 
-    public boolean isSymmetric(TreeNode root) {
-        if (root == null) return true;
-        return isMirror(root.left, root.right);
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if (p == null || q == null) return p == q;
+        if (p.val != q.val) return false;
+
+        boolean left = isSameTree(p.left, q.left);
+        boolean right = isSameTree(p.right, q.right);
+
+        return left && right;
     }
 }

@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.binarytree.easy.symetrictree;
+package com.vincennlin.leetcode.binarytreegeneral.easy.symetrictree;
 //101
 public class Main {
     public static void main(String[] args) {

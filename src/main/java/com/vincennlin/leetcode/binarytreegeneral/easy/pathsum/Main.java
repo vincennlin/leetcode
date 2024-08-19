@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.binarytree.easy.pathsum;
+package com.vincennlin.leetcode.binarytreegeneral.easy.pathsum;
 
 public class Main {
 

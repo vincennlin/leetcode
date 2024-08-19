@@ -1,4 +1,7 @@
-package com.vincennlin.leetcode.binarytree.easy.invertbinarytree;
+package com.vincennlin.leetcode.binarytreegeneral.easy.symetrictree;
+
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * Definition for a binary tree node.
@@ -16,7 +19,7 @@ package com.vincennlin.leetcode.binarytree.easy.invertbinarytree;
  * }
  */
 class Solution {
-    public class TreeNode {
+    public static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
@@ -34,19 +37,16 @@ class Solution {
         }
     }
 
-    public TreeNode invertTree(TreeNode root) {
-        if (root == null || (root.left == null && root.right == null)) return root;
-        if (root.left == null) {
-            root.left = invertTree(root.right);
-            root.right = null;
-        } else if (root.right == null) {
-            root.right = invertTree(root.left);
-            root.left = null;
-        } else {
-            TreeNode temp = root.left;
-            root.left = invertTree(root.right);
-            root.right = invertTree(temp);
-        }
-        return root;
+    public boolean isMirror(TreeNode leftNode, TreeNode rightNode) {
+        if (leftNode == null && rightNode == null) return true;
+        if (leftNode == null || rightNode == null) return false;
+        return (leftNode.val == rightNode.val)
+                && isMirror(leftNode.left, rightNode.right)
+                && isMirror(leftNode.right, rightNode.left);
+    }
+
+    public boolean isSymmetric(TreeNode root) {
+        if (root == null) return true;
+        return isMirror(root.left, root.right);
     }
 }

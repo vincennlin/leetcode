@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.binarytree.easy.countcompletetreenodes;
+package com.vincennlin.leetcode.binarytreegeneral.easy.countcompletetreenodes;
 
 import com.sun.source.tree.Tree;
 

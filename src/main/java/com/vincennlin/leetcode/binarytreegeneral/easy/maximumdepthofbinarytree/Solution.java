@@ -1,5 +1,8 @@
-package com.vincennlin.leetcode.binarytree.easy.sametree;
-//100
+package com.vincennlin.leetcode.binarytreegeneral.easy.maximumdepthofbinarytree;
+//104
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -16,7 +19,7 @@ package com.vincennlin.leetcode.binarytree.easy.sametree;
  * }
  */
 class Solution {
-    public class TreeNode {
+    public static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
@@ -34,14 +37,23 @@ class Solution {
         }
     }
 
+    private int maxDepth = 1;
 
-    public boolean isSameTree(TreeNode p, TreeNode q) {
-        if (p == null || q == null) return p == q;
-        if (p.val != q.val) return false;
+    public void traverse (TreeNode node, int depth) {
+        if (node.left == null && node.right == null) {
+            if (maxDepth < depth) maxDepth = depth;
+        }
+        if (node.left != null) {
+            traverse(node.left, depth + 1);
+        }
+        if (node.right != null) {
+            traverse(node.right, depth + 1);
+        }
+    }
 
-        boolean left = isSameTree(p.left, q.left);
-        boolean right = isSameTree(p.right, q.right);
-
-        return left && right;
+    public int maxDepth(TreeNode root) {
+        if (root == null) return 0;
+        traverse(root, 1);
+        return this.maxDepth;
     }
 }
