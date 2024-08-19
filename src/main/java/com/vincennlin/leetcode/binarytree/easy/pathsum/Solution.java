@@ -1,5 +1,5 @@
 package com.vincennlin.leetcode.binarytree.easy.pathsum;
-
+//112
 class Solution {
     public static class TreeNode {
         int val;
@@ -19,18 +19,10 @@ class Solution {
         }
     }
 
-    public boolean traverse(TreeNode currentNode, int currentSum, int targetSum) {
-        if (currentNode.left == null && currentNode.right == null) {
-            return currentSum + currentNode.val == targetSum;
-        }
-        if (currentNode.right == null) return traverse(currentNode.left, currentSum + currentNode.val, targetSum);
-        if (currentNode.left == null) return traverse(currentNode.right, currentSum + currentNode.val, targetSum);
-        return traverse(currentNode.left, currentSum + currentNode.val, targetSum)
-                || traverse(currentNode.right, currentSum + currentNode.val, targetSum);
-    }
-
     public boolean hasPathSum(TreeNode root, int targetSum) {
         if (root == null) return false;
-        return traverse(root, 0, targetSum);
+        if (root.left == null && root.right == null) return root.val == targetSum;
+        return hasPathSum(root.left, targetSum - root.val)
+                || hasPathSum(root.right, targetSum - root.val);
     }
 }
