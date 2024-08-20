@@ -22,32 +22,25 @@ class Solution {
         }
     }
 
-    private int firstIndexOf(int[] array, int target) {
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == target) return i;
-        }
-        return -1;
-    }
+    private Map<Integer, Integer> inorderIndexMap;
+    private int preorderIndex;
 
-    public TreeNode buildTree(Queue<Integer> preorder, int[] inorder) {
-        if (preorder.isEmpty() || inorder.length == 0) return null;
-        int current = preorder.poll();
+    public TreeNode buildTree(int[] preorder, int[] inorder, int inStart, int inEnd) {
+        if (preorder.length == 0 || inStart > inEnd) return null;
+        int current = preorder[preorderIndex++];
         TreeNode currentNode = new TreeNode(current);
-        if (inorder.length != 1) {
-            int currentIndexInInorder = firstIndexOf(inorder, current);
-            currentNode.left = buildTree(preorder, Arrays.copyOfRange(inorder, 0, currentIndexInInorder));
-            currentNode.right = buildTree(preorder, Arrays.copyOfRange(inorder, currentIndexInInorder + 1, inorder.length));
-        } else {
-            currentNode.left = null;
-            currentNode.right = null;
-        }
+        int currentIndexInInorder = inorderIndexMap.get(current);
+        currentNode.left = buildTree(preorder, inorder, inStart, currentIndexInInorder - 1);
+        currentNode.right = buildTree(preorder, inorder, currentIndexInInorder + 1, inEnd);
         return currentNode;
     }
 
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        Queue<Integer> preorderQueue = new LinkedList<>();
-        for (int num : preorder) preorderQueue.offer(num);
-
-        return buildTree(preorderQueue, inorder);
+        preorderIndex = 0;
+        inorderIndexMap = new HashMap<>();
+        for (int i = 0; i < inorder.length; i++) {
+            inorderIndexMap.put(inorder[i], i);
+        }
+        return buildTree(preorder, inorder, 0, inorder.length - 1);
     }
 }

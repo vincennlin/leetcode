@@ -17,10 +17,16 @@ public class Main {
         Solution.TreeNode root2 = solution.buildTree(preorder2, inorder2);
         System.out.println("Example 2 tree constructed.");
 
+        int[] preorder3 = {1, 2};
+        int[] inorder3 = {1, 2};
+        Solution.TreeNode root3 = solution.buildTree(preorder3, inorder3);
+
         // Optional: You can add a method to print the tree or validate its structure
         printInOrder(root1); // should match inorder1
         System.out.println();
         printInOrder(root2); // should match inorder2
+        System.out.println();
+        printInOrder(root3);
         System.out.println();
     }
 
