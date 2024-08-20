@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.dynamicprogramming.easy.houserobber;
+package com.vincennlin.leetcode.dynamicprogramming.medium.houserobber;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,6 +9,9 @@ public class Main {
 
         int[] nums2 = {2, 7, 9, 3, 1};
         System.out.println("nums = [2, 7, 9, 3, 1]: " + solution.rob(nums2));
+
+        int[] nums3 = {2, 1, 1, 2};
+        System.out.println("nums = [2, 1, 1, 2]: " + solution.rob(nums3));
     }
 }
 
