@@ -21,6 +21,7 @@ public class Main {
         printInOrder(root1); // should match inorder1
         System.out.println();
         printInOrder(root2); // should match inorder2
+        System.out.println();
     }
 
     // Helper method to print tree in InOrder fashion
