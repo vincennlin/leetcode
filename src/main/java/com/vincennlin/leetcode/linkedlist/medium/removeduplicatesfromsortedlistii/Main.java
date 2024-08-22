@@ -12,6 +12,10 @@ Example 2:
 
 Input: head = [1,1,1,2,3]
 Output: [2,3]
+
+Example 3:
+Input : head = [1,2,2]
+Output: [1]
  */
 public class Main {
     public static void main(String[] args) {
@@ -43,6 +47,18 @@ public class Main {
         while (result2 != null) {
             System.out.println(result2.val);
             result2 = result2.next;
+        }
+
+        System.out.println();
+
+        ListNode head3 = new ListNode(1);
+        head3.next = new ListNode(2);
+        head3.next.next = new ListNode(2);
+
+        ListNode result3 = solution.deleteDuplicates(head3);
+        while (result3 != null) {
+            System.out.println(result3.val);
+            result3 = result3.next;
         }
     }
 }
