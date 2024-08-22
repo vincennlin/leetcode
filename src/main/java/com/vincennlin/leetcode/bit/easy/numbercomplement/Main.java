@@ -25,7 +25,11 @@ public class Main {
         int result = solution.findComplement(num);
         System.out.println(result);
 
-        num = 1;
+        num = 2;
+        result = solution.findComplement(num);
+        System.out.println(result);
+
+        num = 2147483647;
         result = solution.findComplement(num);
         System.out.println(result);
     }
