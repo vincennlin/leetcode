@@ -19,24 +19,6 @@ import java.util.Queue;
  * }
  */
 class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {}
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
     public boolean isMirror(TreeNode leftNode, TreeNode rightNode) {
         if (leftNode == null && rightNode == null) return true;
         if (leftNode == null || rightNode == null) return false;
