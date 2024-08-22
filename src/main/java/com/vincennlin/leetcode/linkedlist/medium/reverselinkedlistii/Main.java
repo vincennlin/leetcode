@@ -17,16 +17,30 @@ public class Main {
     public static void main(String[] args) {
         Solution solution = new Solution();
 
-        ListNode head = new ListNode(1);
-        head.next = new ListNode(2);
-        head.next.next = new ListNode(3);
-        head.next.next.next = new ListNode(4);
-        head.next.next.next.next = new ListNode(5);
+        ListNode head1 = new ListNode(1);
+        head1.next = new ListNode(2);
+        head1.next.next = new ListNode(3);
+        head1.next.next.next = new ListNode(4);
+        head1.next.next.next.next = new ListNode(5);
 
-        ListNode result = solution.reverseBetween(head, 2, 4);
-        while (result != null) {
-            System.out.println(result.val);
-            result = result.next;
+        ListNode result1 = solution.reverseBetween(head1, 2, 4);
+        while (result1 != null) {
+            System.out.println(result1.val);
+            result1 = result1.next;
+        }
+
+        System.out.println();
+
+        ListNode head2 = new ListNode(1);
+        head2.next = new ListNode(2);
+        head2.next.next = new ListNode(3);
+        head2.next.next.next = new ListNode(4);
+        head2.next.next.next.next = new ListNode(5);
+
+        ListNode result2 = solution.reverseBetween(head2, 1, 5);
+        while (result2 != null) {
+            System.out.println(result2.val);
+            result2 = result2.next;
         }
     }
 }
