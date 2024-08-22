@@ -45,15 +45,36 @@ public class Main {
 
         solution.flatten(root2);
 
+        System.out.println();
+        while (root2 != null) {
+            System.out.println(root2.val);
+            root1 = root1.right;
+        }
+
         // Example 3: root = [0]
 
         TreeNode root3 = new TreeNode(0);
 
         solution.flatten(root3);
 
+        System.out.println();
         while (root3 != null) {
             System.out.println(root3.val);
             root3 = root3.right;
+        }
+
+        // Example 4: root = [2,1,4,null,null,3]
+        TreeNode root4 = new TreeNode(2);
+        root4.left = new TreeNode(1);
+        root4.right = new TreeNode(4);
+        root4.right.left = new TreeNode(3);
+
+        solution.flatten(root4);
+
+        System.out.println();
+        while (root4 != null) {
+            System.out.println(root4.val);
+            root4 = root4.right;
         }
     }
 }
