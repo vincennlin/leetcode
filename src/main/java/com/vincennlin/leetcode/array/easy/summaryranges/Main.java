@@ -43,5 +43,8 @@ public class Main {
 
         int[] nums3 = {};
         System.out.println(solution.summaryRanges(nums3)); // []
+
+        int[] nums4 = {-1};
+        System.out.println(solution.summaryRanges(nums4)); // ["-1"]
     }
 }
