@@ -52,6 +52,6 @@ public class Main {
         root4.right.right = new TreeNode(3184);
         int result4 = solution.kthSmallest(root4, 3);
 
-        System.out.println(result4); // 1434
+        System.out.println(result4); // 1564
     }
 }
