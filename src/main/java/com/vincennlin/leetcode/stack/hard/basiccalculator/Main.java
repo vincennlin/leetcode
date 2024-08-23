@@ -43,5 +43,11 @@ public class Main {
 
         String s3 = "(1+(4+5+2)-3)+(6+8)";
         System.out.println(solution.calculate(s3)); // 23
+
+        String s4 = "2147483647";
+        System.out.println(solution.calculate(s4)); // 2147483647
+
+        String s5 = "1-(     -2)";
+        System.out.println(solution.calculate(s5)); // 3
     }
 }
