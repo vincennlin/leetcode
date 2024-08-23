@@ -1,14 +1,13 @@
 package com.vincennlin.leetcode.stack.medium.simplifypath;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 //71
 class Solution {
     public String simplifyPath(String path) {
         String[] pathArray = path.split("/");
-        Stack<String> pathStack = new Stack<>();
+        Deque<String> pathStack = new ArrayDeque<>();
 
         for (String currentStr : pathArray) {
             if (currentStr.equals("..")) {
@@ -18,14 +17,12 @@ class Solution {
             }
         }
 
-        List<String> pathList = new LinkedList<>(pathStack);
-        StringBuilder sb = new StringBuilder();
+        if (pathStack.isEmpty()) return "/";
 
-        while (!pathList.isEmpty()) {
-            String str = pathList.remove(0);
-            sb.append("/").append(str);
+        StringBuilder sb = new StringBuilder();
+        while (!pathStack.isEmpty()) {
+            sb.insert(0, "/" + pathStack.pop());
         }
-        if (sb.isEmpty()) sb.append("/");
 
         return sb.toString();
     }
