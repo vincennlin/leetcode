@@ -1,7 +1,5 @@
 package com.vincennlin.leetcode.binarysearchtree.medium.binarysearchtreeiterator;
 
-import com.vincennlin.leetcode.dynamicprogramming.medium.houserobber.Solution;
-
 /*
 Implement the BSTIterator class that represents an iterator over the in-order traversal of a binary search tree (BST):
 
