@@ -9,20 +9,26 @@ class Solution {
         Deque<Integer> tokenStack = new ArrayDeque<>();
 
         for(String token : tokens) {
-            if (token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/")) {
-                int num2 = tokenStack.pop();
-                int num1 = tokenStack.pop();
-                if (token.equals("+")) {
-                    tokenStack.push(num1 + num2);
-                } else if (token.equals("-")) {
+            switch (token) {
+                case "+":
+                    tokenStack.push(tokenStack.pop() + tokenStack.pop());
+                    break;
+                case "-":
+                    int num2 = tokenStack.pop();
+                    int num1 = tokenStack.pop();
                     tokenStack.push(num1 - num2);
-                } else if (token.equals("*")) {
-                    tokenStack.push(num1 * num2);
-                } else {
+                    break;
+                case "*":
+                    tokenStack.push(tokenStack.pop() * tokenStack.pop());
+                    break;
+                case "/":
+                    num2 = tokenStack.pop();
+                    num1 = tokenStack.pop();
                     tokenStack.push(num1 / num2);
-                }
-            } else {
-                tokenStack.push(Integer.parseInt(token));
+                    break;
+                default:
+                    tokenStack.push(Integer.parseInt(token));
+                    break;
             }
         }
 
