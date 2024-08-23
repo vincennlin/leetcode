@@ -1,7 +1,6 @@
 package com.vincennlin.leetcode.binarysearchtree.medium.kthsmallestelementinabst;
 //230
 class Solution {
-
     private int k;
     private Integer ans;
 
@@ -16,9 +15,9 @@ class Solution {
             return;
         }
 
-        if (ans == null) {
-            inorderTraversal(currentNode.right);
-        }
+        if (ans != null) return;
+
+        inorderTraversal(currentNode.right);
     }
 
     public int kthSmallest(TreeNode root, int k) {
