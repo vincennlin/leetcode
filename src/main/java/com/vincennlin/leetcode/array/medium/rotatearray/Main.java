@@ -42,5 +42,12 @@ public class Main {
             System.out.print(i + " ");
         }
         System.out.println();
+
+        int[] nums3 = {1,2,3};
+        solution.rotate(nums3, 4);
+        for (int i : nums3) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
     }
 }
