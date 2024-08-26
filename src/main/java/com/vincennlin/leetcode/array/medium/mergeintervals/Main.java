@@ -14,6 +14,14 @@ Input: intervals = [[1,4],[4,5]]
 Output: [[1,5]]
 Explanation: Intervals [1,4] and [4,5] are considered overlapping.
 
+Example 3:
+Input: intervals = [[1,4],[2,3]]
+Output: [[1,4]]
+
+Example 4:
+Input: intervals = [[4,5],[2,4],[4,6],[3,4],[0,0],[1,1],[3,5],[2,2]]
+Output: [[0,0],[1,1],[2,6]]
+
 Constraints:
 
 1 <= intervals.length <= 104
@@ -35,6 +43,22 @@ public class Main {
         int[][] intervals2 = new int[][]{{1, 4}, {4, 5}};
         int[][] result2 = solution.merge(intervals2);
         for (int[] interval : result2) {
+            System.out.println("[" + interval[0] + ", " + interval[1] + "]");
+        }
+
+        System.out.println();
+
+        int[][] intervals3 = new int[][]{{1, 4}, {2, 3}};
+        int[][] result3 = solution.merge(intervals3);
+        for (int[] interval : result3) {
+            System.out.println("[" + interval[0] + ", " + interval[1] + "]");
+        }
+
+        System.out.println();
+
+        int[][] intervals4 = new int[][]{{4, 5}, {2, 4}, {4, 6}, {3, 4}, {0, 0}, {1, 1}, {3, 5}, {2, 2}};
+        int[][] result4 = solution.merge(intervals4);
+        for (int[] interval : result4) {
             System.out.println("[" + interval[0] + ", " + interval[1] + "]");
         }
     }
