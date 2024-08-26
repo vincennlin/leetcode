@@ -1,24 +1,22 @@
 package com.vincennlin.leetcode.hashtable.easy.isomorphicstrings;
 
-import java.util.HashMap;
-import java.util.Map;
-
 class Solution {
     public boolean isIsomorphic(String s, String t) {
         if (s.length() != t.length()) return false;
 
-        Map<Character, Character> sToTMap = new HashMap<>();
-        Map<Character, Character> tToSMap = new HashMap<>();
+        int[] sToTMap = new int[256];
+        int[] tToSMap = new int[256];
 
         for (int i = 0; i < s.length(); i++) {
-            if (sToTMap.containsKey(s.charAt(i)) && sToTMap.get(s.charAt(i)) != t.charAt(i)) {
+            char sChar = s.charAt(i);
+            char tChar = t.charAt(i);
+
+            if (sToTMap[sChar] == 0 && tToSMap[tChar] == 0) {
+                sToTMap[sChar] = tChar;
+                tToSMap[tChar] = sChar;
+            } else if (sToTMap[sChar] != tChar || tToSMap[tChar] != sChar) {
                 return false;
             }
-            if (tToSMap.containsKey(t.charAt(i)) && tToSMap.get(t.charAt(i)) != s.charAt(i)) {
-                return false;
-            }
-            sToTMap.put(s.charAt(i), t.charAt(i));
-            tToSMap.put(t.charAt(i), s.charAt(i));
         }
 
         return true;
