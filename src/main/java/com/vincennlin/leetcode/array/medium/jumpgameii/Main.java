@@ -28,5 +28,8 @@ public class Main {
 
         int[] nums2 = {2,3,0,1,4};
         System.out.println(solution.jump(nums2));// 2
+
+        int[] nums3 = {7,0,9,6,9,6,1,7,9,0,1,2,9,0,3};
+        System.out.println(solution.jump(nums3));// 2
     }
 }
