@@ -9,19 +9,17 @@ class Solution {
         if (intervals.length < 2) return intervals;
 
         Arrays.sort(intervals, Comparator.comparingInt(o -> o[0]));
-        int mergedIndex = 0;
+        int lastMergedIndex = 0;
 
         for (int i = 1; i < intervals.length ; i++) {
-            if (intervals[mergedIndex][1] >= intervals[i][0]) {
-                if (intervals[mergedIndex][1] < intervals[i][1]) {
-                    intervals[mergedIndex][1] = intervals[i][1];
-                }
+            if (intervals[lastMergedIndex][1] >= intervals[i][0]) {
+                intervals[lastMergedIndex][1] = Math.max(intervals[lastMergedIndex][1], intervals[i][1]);
             } else {
-                intervals[mergedIndex+1] = intervals[i];
-                mergedIndex++;
+                lastMergedIndex++;
+                intervals[lastMergedIndex] = intervals[i];
             }
         }
 
-        return Arrays.copyOf(intervals, mergedIndex + 1);
+        return Arrays.copyOf(intervals, lastMergedIndex + 1);
     }
 }
