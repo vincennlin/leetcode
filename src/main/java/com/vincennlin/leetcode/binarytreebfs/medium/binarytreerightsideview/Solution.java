@@ -15,15 +15,15 @@ class Solution {
         nodeQueue.add(root);
 
         while (!nodeQueue.isEmpty()) {
-            int layerSize = nodeQueue.size();
+            int levelSize = nodeQueue.size();
 
-            for (int i = 0; i < layerSize; i++) {
+            for (int i = 0; i < levelSize; i++) {
                 TreeNode currentNode = nodeQueue.poll();
-                if (currentNode == null) continue;
-                if (currentNode.left != null) nodeQueue.add(currentNode.left);
-                if (currentNode.right != null) nodeQueue.add(currentNode.right);
 
-                if (i == layerSize - 1) result.add(currentNode.val);
+                if (i == 0) result.add(currentNode.val);
+
+                if (currentNode.right != null) nodeQueue.add(currentNode.right);
+                if (currentNode.left != null) nodeQueue.add(currentNode.left);
             }
         }
 
