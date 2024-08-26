@@ -2,35 +2,27 @@ package com.vincennlin.leetcode.linkedlist.medium.rotatelist;
 //61
 class Solution {
     public ListNode rotateRight(ListNode head, int k) {
-        if (head == null) return null;
-        if (k == 0) return head;
+        if (head == null || head.next == null || k == 0) return head;
 
-        ListNode dummyNode = new ListNode();
-        dummyNode.next = head;
         ListNode currentNode = head;
-        int length = 0;
-
-        while (currentNode != null) {
+        int length = 1;
+        while (currentNode.next != null) {
             currentNode = currentNode.next;
             length++;
         }
 
-        k = k % length;
-        ListNode tailNode = head;
-        for (int i = 0; i < k; i++) {
-            tailNode = tailNode.next;
-        }
+        currentNode.next = head;
 
-        currentNode = head;
-        while (tailNode.next != null) {
-            tailNode = tailNode.next;
+        k = k % length;
+        int steps = length - k;
+
+        for (int i = 0; i < steps; i++) {
             currentNode = currentNode.next;
         }
 
-        tailNode.next = dummyNode.next;
-        dummyNode.next = currentNode.next;
+        head = currentNode.next;
         currentNode.next = null;
 
-        return dummyNode.next;
+        return head;
     }
 }

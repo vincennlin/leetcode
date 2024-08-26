@@ -28,7 +28,7 @@ public class Main {
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
 
-        int k = 10;
+        int k = 2;
         ListNode result = solution.rotateRight(head, k);
 
         while (result != null) {
