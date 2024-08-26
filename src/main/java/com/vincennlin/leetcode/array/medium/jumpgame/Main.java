@@ -30,5 +30,8 @@ public class Main {
 
         int[] nums2 = {3,2,1,0,4};
         System.out.println(solution.canJump(nums2));// false
+
+        int[] nums3 = {2,0,0};
+        System.out.println(solution.canJump(nums3));// true
     }
 }
