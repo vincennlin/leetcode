@@ -17,6 +17,10 @@ Example 3:
 Input: root = []
 Output: []
 
+Example 4:
+Input: root = [1,2,3,4,null,null,5]
+Output: [[1],[3,2],[4,5]]
+
 Constraints:
 
 The number of nodes in the tree is in the range [0, 2000].
@@ -45,5 +49,15 @@ public class Main {
         TreeNode root3 = null;
 
         System.out.println(solution.zigzagLevelOrder(root3));
+
+        System.out.println();
+
+        TreeNode root4 = new TreeNode(1);
+        root4.left = new TreeNode(2);
+        root4.right = new TreeNode(3);
+        root4.left.left = new TreeNode(4);
+        root4.right.right = new TreeNode(5);
+
+        System.out.println(solution.zigzagLevelOrder(root4));
     }
 }
