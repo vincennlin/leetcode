@@ -44,5 +44,8 @@ public class Main {
 
         int[] nums5 = {1};
         System.out.println(solution.searchInsert(nums5, 0));// 0
+
+        int[] nums6 = {1,3,5,6};
+        System.out.println(solution.searchInsert(nums6, 7));// 4
     }
 }
