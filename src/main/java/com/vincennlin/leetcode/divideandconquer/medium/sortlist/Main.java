@@ -33,7 +33,11 @@ public class Main {
         head1.next.next = new ListNode(1);
         head1.next.next.next = new ListNode(3);
 
-        System.out.println(solution.sortList(head1));
+        ListNode result1 = solution.sortList(head1);
+        while (result1 != null) {
+            System.out.print(result1.val + " ");
+            result1 = result1.next;
+        }
 
         System.out.println();
 
@@ -43,12 +47,20 @@ public class Main {
         head2.next.next.next = new ListNode(4);
         head2.next.next.next.next = new ListNode(0);
 
-        System.out.println(solution.sortList(head2));
+        ListNode result2 = solution.sortList(head2);
+        while (result2 != null) {
+            System.out.print(result2.val + " ");
+            result2 = result2.next;
+        }
 
         System.out.println();
 
         ListNode head3 = null;
 
-        System.out.println(solution.sortList(head3));
+        ListNode result3 = solution.sortList(head3);
+        while (result3 != null) {
+            System.out.print(result3.val + " ");
+            result3 = result3.next;
+        }
     }
 }
