@@ -31,7 +31,7 @@ public class Main {
         head1.next.next.next.next = new ListNode(5);
         head1.next.next.next.next.next = new ListNode(2);
 
-        ListNode result1 = solution.partition(head1, 3);
+        ListNode result1 = solution.partition(head1, 0);
         while (result1 != null) {
             System.out.println(result1.val);
             result1 = result1.next;
