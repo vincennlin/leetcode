@@ -36,13 +36,13 @@ public class Main {
         Solution solution = new Solution();
 
         int[] nums1 = {1,-2,3,-2};
-        System.out.println(solution.maxSubarraySumCircular(nums1));
+        System.out.println(solution.maxSubarraySumCircular(nums1));// 3
 
         int[] nums2 = {5,-3,5};
-        System.out.println(solution.maxSubarraySumCircular(nums2));
+        System.out.println(solution.maxSubarraySumCircular(nums2));// 10
 
         int[] nums3 = {-3,-2,-3};
-        System.out.println(solution.maxSubarraySumCircular(nums3));
+        System.out.println(solution.maxSubarraySumCircular(nums3));// -2
 
         int [] nums4 = {-5,4,-6};
         System.out.println(solution.maxSubarraySumCircular(nums4));// 4
