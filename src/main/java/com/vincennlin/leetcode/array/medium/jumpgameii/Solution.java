@@ -2,14 +2,17 @@ package com.vincennlin.leetcode.array.medium.jumpgameii;
 //45
 class Solution {
     public int jump(int[] nums) {
-        if (nums.length <= 1) return 0;
         int minJump = 0;
         int farthest = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (i + nums[i] > farthest) {
-                farthest = i + nums[i];
+        int currentEnd = 0;
+
+        for (int i = 0; i < nums.length - 1; i++) {
+            farthest = Math.max(farthest, i + nums[i]);
+
+            if (i == currentEnd) {
                 minJump++;
-                if (farthest >= nums.length - 1) return minJump;
+                currentEnd = farthest;
+                if (currentEnd >= nums.length - 1) break;
             }
         }
         return minJump;
