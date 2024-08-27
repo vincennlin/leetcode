@@ -48,5 +48,9 @@ public class Main {
         int[] gas2 = {2,3,4};
         int[] cost2 = {3,4,3};
         System.out.println(solution.canCompleteCircuit(gas2, cost2)); // -1
+
+        int[] gas3 = {3,1,1};
+        int[] cost3 = {1,2,2};
+        System.out.println(solution.canCompleteCircuit(gas3, cost3)); // 0
     }
 }
