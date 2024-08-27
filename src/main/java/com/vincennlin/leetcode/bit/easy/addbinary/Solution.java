@@ -10,7 +10,7 @@ class Solution {
         StringBuilder sb = new StringBuilder();
 
         while (i >= 0 || j >= 0) {
-            sum = ((i >= 0 ? Integer.parseInt(String.valueOf(a.charAt(i))) : 0) + (j >= 0 ? Integer.parseInt(String.valueOf(b.charAt(j))) : 0) + carry);
+            sum = ((i >= 0 ? a.charAt(i) - '0' : 0) + (j >= 0 ? b.charAt(j) - '0' : 0) + carry);
             carry = sum / 2;
             sum = sum % 2;
 
