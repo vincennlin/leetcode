@@ -55,7 +55,11 @@ public class Main {
         node4.next = null;
         node4.random = head1;
         Node result1 = solution.copyRandomList(head1);
-        System.out.println(result1); // [[7,null],[13,0],[11,4],[10,2],[1,0]]
+        while (result1 != null) {
+            System.out.print("[" + result1.val + "," + (result1.random == null ? "null" : result1.random.val) + "]");
+            result1 = result1.next;
+        } // [[7,null],[13,0],[11,4],[10,2],[1,0]]
+        System.out.println();
 
         Node head2 = new Node(1);
         Node node5 = new Node(2);
@@ -64,7 +68,11 @@ public class Main {
         node5.next = null;
         node5.random = node5;
         Node result2 = solution.copyRandomList(head2);
-        System.out.println(result2); // [[1,1],[2,1]]
+        while (result2 != null) {
+            System.out.print("[" + result2.val + "," + (result2.random == null ? "null" : result2.random.val) + "]");
+            result2 = result2.next;
+        } // [[1,1],[2,1]]
+        System.out.println();
 
         Node head3 = new Node(3);
         Node node6 = new Node(3);
@@ -76,6 +84,9 @@ public class Main {
         node7.next = null;
         node7.random = null;
         Node result3 = solution.copyRandomList(head3);
-        System.out.println(result3); // [[3,null],[3,0],[3,null]]
+        while (result3 != null) {
+            System.out.print("[" + result3.val + "," + (result3.random == null ? "null" : result3.random.val) + "]");
+            result3 = result3.next;
+        } // [[3,null],[3,0],[3,null]]
     }
 }
