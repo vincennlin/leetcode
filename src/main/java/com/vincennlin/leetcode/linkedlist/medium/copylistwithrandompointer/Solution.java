@@ -22,10 +22,12 @@ class Solution {
 
         Node newHead = head.next;
         currentNode = head;
-        while (currentNode != null && currentNode.next != null) {
-            Node tempNode = currentNode.next.next;
-            if (tempNode != null) currentNode.next.next = tempNode.next;
-            currentNode.next = tempNode;
+        while (currentNode != null) {
+            Node newNode = currentNode.next;
+            currentNode.next = newNode.next;
+            if (newNode.next != null) {
+                newNode.next = newNode.next.next;
+            }
             currentNode = currentNode.next;
         }
 
