@@ -34,5 +34,11 @@ public class Main {
 
         int[] citations3 = {1,1,1};
         System.out.println(solution.hIndex(citations3));// 1
+
+        int[] citations4 = {1};
+        System.out.println(solution.hIndex(citations4));// 1
+
+        int[] citations5 = {11, 15};
+        System.out.println(solution.hIndex(citations5));// 2
     }
 }
