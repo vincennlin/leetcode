@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.array.medium.minimumsizesubarraysum;
+package com.vincennlin.leetcode.slidingwindow.minimumsizesubarraysum;
 /*
 Given an array of positive integers nums and a positive integer target, return the minimal length of a
 subarray
