@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.matrix;
+package com.vincennlin.leetcode.matrix.medium.validsudoku;
 
 import java.util.HashSet;
 import java.util.Set;
