@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.slidingwindow.longestsubstringwithoutrepeatingcharacters;
+package com.vincennlin.leetcode.slidingwindow.medium.longestsubstringwithoutrepeatingcharacters;
 
 import java.util.HashMap;
 import java.util.Map;

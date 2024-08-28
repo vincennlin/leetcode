@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.slidingwindow.longestsubstringwithoutrepeatingcharacters;
+package com.vincennlin.leetcode.slidingwindow.medium.longestsubstringwithoutrepeatingcharacters;
 /*
 Given a string s, find the length of the longest substringwithout repeating characters.
 

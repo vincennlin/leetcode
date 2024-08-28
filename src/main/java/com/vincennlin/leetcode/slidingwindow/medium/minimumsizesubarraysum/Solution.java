@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.slidingwindow.minimumsizesubarraysum;
+package com.vincennlin.leetcode.slidingwindow.medium.minimumsizesubarraysum;
 //209
 class Solution {
     public int minSubArrayLen(int target, int[] nums) {
