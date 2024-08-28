@@ -10,18 +10,19 @@ class Solution {
     public Node cloneGraph(Node node) {
         if (node == null) return null;
         nodeMap = new HashMap<>();
-        dfs(node);
-        return nodeMap.get(node);
+        return dfs(node);
     }
 
-    private void dfs(Node node) {
-        if (!nodeMap.containsKey(node)) {
-            Node clonedNode = new Node(node.val);
-            nodeMap.put(node, clonedNode);
-            for (Node neighbor : node.neighbors) {
-                dfs(neighbor);
-                clonedNode.neighbors.add(nodeMap.get(neighbor));
-            }
+    private Node dfs(Node node) {
+        if (nodeMap.containsKey(node)) return nodeMap.get(node);
+
+        Node clonedNode = new Node(node.val);
+        nodeMap.put(node, clonedNode);
+
+        for (Node neighbor : node.neighbors) {
+            clonedNode.neighbors.add(dfs(neighbor));
         }
+
+        return clonedNode;
     }
 }
