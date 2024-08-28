@@ -1,4 +1,7 @@
 package com.vincennlin.leetcode.array.medium.productofarrayexceptself;
+
+import java.util.Arrays;
+
 /*
 Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].
 
@@ -28,9 +31,11 @@ public class Main {
         Solution solution = new Solution();
 
         int[] nums1 = {1, 2, 3, 4};
-        System.out.println(solution.productExceptSelf(nums1)); // [24,12,8,6]
+        int[] result1 = solution.productExceptSelf(nums1);
+        System.out.println(Arrays.toString(result1)); // [24,12,8,6]
 
         int[] nums2 = {-1, 1, 0, -3, 3};
-        System.out.println(solution.productExceptSelf(nums2)); // [0,0,9,0,0]
+        int[] result2 = solution.productExceptSelf(nums2);
+        System.out.println(Arrays.toString(result2)); // [0,0,9,0,0]
     }
 }
