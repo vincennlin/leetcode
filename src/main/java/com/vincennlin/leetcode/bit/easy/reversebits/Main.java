@@ -32,5 +32,6 @@ public class Main {
 
         System.out.println(solution.reverseBits(43261596)); // 964176192
         System.out.println(solution.reverseBits((int)4294967293L)); // 3221225471
+//        System.out.println(solution.reverseBits(-3)); // 3221225471
     }
 }
