@@ -34,5 +34,11 @@ public class Main {
         System.out.println(solution.lengthOfLIS(new int[]{0, 1, 0, 3, 2, 3})); // 4
 
         System.out.println(solution.lengthOfLIS(new int[]{7, 7, 7, 7, 7, 7, 7})); // 1
+
+        System.out.println(solution.lengthOfLIS(new int[]{1, 2})); // 2
+
+        System.out.println(solution.lengthOfLIS(new int[]{-1, 0})); // 2
+
+        System.out.println(solution.lengthOfLIS(new int[]{-2, -1})); // 2
     }
 }
