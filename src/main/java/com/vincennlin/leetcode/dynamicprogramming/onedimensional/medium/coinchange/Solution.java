@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.dynamicprogramming.medium.coinchange;
+package com.vincennlin.leetcode.dynamicprogramming.onedimensional.medium.coinchange;
 
 import java.util.Arrays;
 

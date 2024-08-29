@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.dynamicprogramming.easy.climbingstairs;
+package com.vincennlin.leetcode.dynamicprogramming.onedimensional.easy.climbingstairs;
 //70
 class Solution {
     public int climbStairs(int n) {

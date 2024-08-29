@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.dynamicprogramming.medium.houserobber;
+package com.vincennlin.leetcode.dynamicprogramming.onedimensional.medium.houserobber;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.dynamicprogramming.medium.longestincreasingsubsequence;
+package com.vincennlin.leetcode.dynamicprogramming.onedimensional.medium.longestincreasingsubsequence;
 // 300
 class Solution {
     public int lengthOfLIS(int[] nums) {

@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.dynamicprogramming.medium.wordbreak;
+package com.vincennlin.leetcode.dynamicprogramming.onedimensional.medium.wordbreak;
 
 import java.util.HashSet;
 import java.util.List;

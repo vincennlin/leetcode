@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.dynamicprogramming.medium.stonegameii;
+package com.vincennlin.leetcode.dynamicprogramming.onedimensional.medium.stonegameii;
 
 public class Main {
     public static void main(String[] args) {

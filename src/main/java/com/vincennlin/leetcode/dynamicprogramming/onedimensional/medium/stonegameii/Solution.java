@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.dynamicprogramming.medium.stonegameii;
+package com.vincennlin.leetcode.dynamicprogramming.onedimensional.medium.stonegameii;
 //1140
 class Solution {
     public int stoneGameII(int[] piles) {

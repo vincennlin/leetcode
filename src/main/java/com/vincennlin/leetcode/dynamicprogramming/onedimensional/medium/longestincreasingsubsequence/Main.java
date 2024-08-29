@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.dynamicprogramming.medium.longestincreasingsubsequence;
+package com.vincennlin.leetcode.dynamicprogramming.onedimensional.medium.longestincreasingsubsequence;
 /*
 Given an integer array nums, return the length of the longest strictly increasing subsequence.
 

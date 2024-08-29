@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.dynamicprogramming.medium.houserobber;
+package com.vincennlin.leetcode.dynamicprogramming.onedimensional.medium.houserobber;
 //198
 public class Solution {
     public int rob(int[] nums) {

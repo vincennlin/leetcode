@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.dynamicprogramming.easy.climbingstairs;
+package com.vincennlin.leetcode.dynamicprogramming.onedimensional.easy.climbingstairs;
 
 public class Main {
     public static void main(String[] args) {
