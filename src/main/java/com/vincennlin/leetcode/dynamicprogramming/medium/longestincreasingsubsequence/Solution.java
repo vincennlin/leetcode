@@ -5,24 +5,21 @@ class Solution {
         if (nums.length == 1) return 1;
 
         int[] dp = new int[nums.length];
-        dp[0] = 10001;
-        int length = 1;
+        int length = 0;
 
         for (int num : nums) {
             int left = 0, right = length;
-            while (left <= right) {
+            while (left < right) {
                 int mid = left + (right - left) / 2;
                 if (num > dp[mid]) {
                     left = mid + 1;
                 } else {
-                    right = mid - 1;
+                    right = mid;
                 }
             }
-            if (left == length + 1) {
-                dp[length] = num;
+            dp[left] = num;
+            if (left == length) {
                 length++;
-            } else {
-                dp[left] = num;
             }
         }
 
