@@ -30,10 +30,18 @@ public class Main {
     public static void main(String[] args) {
         Solution solution = new Solution();
 
-        int[][] matrix = new int[][]{{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 60}};
+        int[][] matrix1 = new int[][]{{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 60}};
 
-        System.out.println(solution.searchMatrix(matrix, 3)); // true
+        System.out.println(solution.searchMatrix(matrix1, 3)); // true
 
-        System.out.println(solution.searchMatrix(matrix, 13)); // false
+        System.out.println(solution.searchMatrix(matrix1, 13)); // false
+
+        int[][] matrix2 = new int[][]{{1}, {3}};
+
+        System.out.println(solution.searchMatrix(matrix2, 2)); // false;
+
+        int[][] matrix3 = new int[][]{{1, 1}};
+
+        System.out.println(solution.searchMatrix(matrix3, 2)); // false
     }
 }
