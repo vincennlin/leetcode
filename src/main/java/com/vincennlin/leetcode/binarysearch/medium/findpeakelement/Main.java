@@ -33,5 +33,9 @@ public class Main {
         System.out.println(solution.findPeakElement(new int[]{1, 2, 3, 1})); // 2
 
         System.out.println(solution.findPeakElement(new int[]{1, 2, 1, 3, 5, 6, 4})); // 5
+
+        System.out.println(solution.findPeakElement(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10})); // 9
+
+        System.out.println(solution.findPeakElement(new int[]{1, 2})); // 1
     }
 }
