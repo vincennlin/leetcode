@@ -28,6 +28,6 @@ public class Main {
 
         System.out.println(solution.mySqrt(4)); // 2
         System.out.println(solution.mySqrt(8)); // 2
-        System.out.println(solution.mySqrt(125));// 11
+        System.out.println(solution.mySqrt(125)); // 11
     }
 }
