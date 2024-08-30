@@ -40,5 +40,7 @@ public class Main {
         System.out.println(solution.minimumTotal(List.of(List.of(2), List.of(3, 4), List.of(6, 5, 7), List.of(4, 1, 8, 3)))); // 11
 
         System.out.println(solution.minimumTotal(List.of(List.of(-10)))); // -10
+
+        System.out.println(solution.minimumTotal(List.of(List.of(-1), List.of(2, 3), List.of(1, -1, -3)))); // -1
     }
 }
