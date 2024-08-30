@@ -30,15 +30,11 @@ class Trie {
 
         for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
-            if (currentMap.containsKey(c)) {
-                currentNode = currentMap.get(c);
-            } else {
+            if (!currentMap.containsKey(c)) {
                 currentNode = new TrieNode();
-                if (i == word.length() - 1) {
-
-                }
                 currentMap.put(c, currentNode);
             }
+            currentNode = currentMap.get(c);
             currentMap = currentNode.childrenMap;
         }
 
@@ -53,11 +49,10 @@ class Trie {
 
         for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
-            if (currentMap.containsKey(c)) {
-                currentNode = currentMap.get(c);
-            } else {
+            if (!currentMap.containsKey(c)) {
                 return false;
             }
+            currentNode = currentMap.get(c);
             currentMap = currentNode.childrenMap;
         }
 
@@ -72,11 +67,10 @@ class Trie {
 
         for (int i = 0; i < prefix.length(); i++) {
             char c = prefix.charAt(i);
-            if (currentMap.containsKey(c)) {
-                currentNode = currentMap.get(c);
-            } else {
+            if (!currentMap.containsKey(c)) {
                 return false;
             }
+            currentNode = currentMap.get(c);
             currentMap = currentNode.childrenMap;
         }
 
