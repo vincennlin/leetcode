@@ -56,5 +56,7 @@ public class Main {
         System.out.println(solution.isInterleave("", "a", "a")); // true
 
         System.out.println(solution.isInterleave("", "a", "b")); // false
+
+        System.out.println(solution.isInterleave("a", "b", "ab")); // true
     }
 }
