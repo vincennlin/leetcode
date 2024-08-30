@@ -1,79 +1,52 @@
 package com.vincennlin.leetcode.trie.medium.implementtrie;
 
-import java.util.HashMap;
-import java.util.Map;
-
 // 208
 class Trie {
 
-    Map<Character, TrieNode> trieMap;
+    TrieNode root;
 
     class TrieNode {
-        Map<Character, TrieNode> childrenMap;
+        TrieNode[] children;
         boolean isEnd;
 
         TrieNode() {
-            childrenMap = new HashMap<>();
+            children = new TrieNode[26];
             isEnd = false;
         }
     }
 
     public Trie() {
-        trieMap = new HashMap<>();
+        root = new TrieNode();
     }
 
     public void insert(String word) {
-        if (word.isEmpty()) return;
+        TrieNode currentNode = root;
 
-        TrieNode currentNode = null;
-        Map<Character, TrieNode> currentMap = trieMap;
-
-        for (int i = 0; i < word.length(); i++) {
-            char c = word.charAt(i);
-            if (!currentMap.containsKey(c)) {
-                currentNode = new TrieNode();
-                currentMap.put(c, currentNode);
+        for (char c : word.toCharArray()) {
+            if (currentNode.children[c - 'a'] == null) {
+                currentNode.children[c - 'a'] = new TrieNode();
             }
-            currentNode = currentMap.get(c);
-            currentMap = currentNode.childrenMap;
+            currentNode = currentNode.children[c - 'a'];
         }
 
         currentNode.isEnd = true;
     }
 
     public boolean search(String word) {
-        if (word.isEmpty()) return false;
-
-        TrieNode currentNode = null;
-        Map<Character, TrieNode> currentMap = trieMap;
-
-        for (int i = 0; i < word.length(); i++) {
-            char c = word.charAt(i);
-            if (!currentMap.containsKey(c)) {
-                return false;
-            }
-            currentNode = currentMap.get(c);
-            currentMap = currentNode.childrenMap;
-        }
-
-        return currentNode.isEnd;
+        TrieNode node = searchNode(word);
+        return node != null && node.isEnd;
     }
 
     public boolean startsWith(String prefix) {
-        if (prefix.isEmpty()) return false;
+        return searchNode(prefix) != null;
+    }
 
-        TrieNode currentNode = null;
-        Map<Character, TrieNode> currentMap = trieMap;
-
-        for (int i = 0; i < prefix.length(); i++) {
-            char c = prefix.charAt(i);
-            if (!currentMap.containsKey(c)) {
-                return false;
-            }
-            currentNode = currentMap.get(c);
-            currentMap = currentNode.childrenMap;
+    private TrieNode searchNode(String str) {
+        TrieNode currentNode = root;
+        for (char c : str.toCharArray()) {
+            currentNode = currentNode.children[c - 'a'];
+            if (currentNode == null) return null;
         }
-
-        return true;
+        return currentNode;
     }
 }
