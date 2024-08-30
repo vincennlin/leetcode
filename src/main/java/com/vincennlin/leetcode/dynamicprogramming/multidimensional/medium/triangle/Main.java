@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.dynamicprogramming.multidimensional.medium.Triangle;
+package com.vincennlin.leetcode.dynamicprogramming.multidimensional.medium.triangle;
 
 import java.util.List;
 
