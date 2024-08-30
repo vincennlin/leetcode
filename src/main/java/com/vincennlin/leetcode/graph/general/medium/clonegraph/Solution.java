@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.graphgeneral.medium.clonegraph;
+package com.vincennlin.leetcode.graph.general.medium.clonegraph;
 
 import java.util.HashMap;
 import java.util.Map;

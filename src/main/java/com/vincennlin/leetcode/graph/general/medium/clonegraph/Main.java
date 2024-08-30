@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.graphgeneral.medium.clonegraph;
+package com.vincennlin.leetcode.graph.general.medium.clonegraph;
 /*
 Given a reference of a node in a connected undirected graph.
 

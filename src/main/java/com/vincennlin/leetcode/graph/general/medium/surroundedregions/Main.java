@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.graphgeneral.medium.surroundedregions;
+package com.vincennlin.leetcode.graph.general.medium.surroundedregions;
 /*
 You are given an m x n matrix board containing letters 'X' and 'O', capture regions that are surrounded:
 

@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.graphgeneral.medium.numberofislands;
+package com.vincennlin.leetcode.graph.general.medium.numberofislands;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.graphgeneral.medium.surroundedregions;
+package com.vincennlin.leetcode.graph.general.medium.surroundedregions;
 //130
 class Solution {
     private int m;
