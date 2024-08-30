@@ -5,26 +5,32 @@ import java.util.List;
 // 120
 class Solution {
     public int minimumTotal(List<List<Integer>> triangle) {
-        int size = triangle.size();
-        int[][] dp = new int[size][];
-        int[] minPath = new int[size];
-        dp[0] = new int[1];
-        dp[0][0] = triangle.get(0).get(0);
-        minPath[0] = dp[0][0];
-        for (int i = 1; i < size; i++) minPath[i] = 10001;
+        int n = triangle.size();
+        int[] dp = new int[n];
 
-        for (int i = 0; i < size - 1; i++) {
-            dp[i + 1] = new int[i + 2];
-            for (int j = 0; j <= i + 1; j++) {
-                dp[i + 1][j] = 10001;
-            }
-            for (int j = 0; j <= i; j++) {
-                dp[i + 1][j] = Math.min(dp[i + 1][j], dp[i][j] + triangle.get(i + 1).get(j));
-                dp[i + 1][j + 1] = Math.min(dp[i + 1][j + 1], dp[i][j] + triangle.get(i + 1).get(j + 1));
-                minPath[i + 1] = Math.min(minPath[i + 1], Math.min(dp[i + 1][j], dp[i + 1][j + 1]));
+        for (int i = 0; i < n; i++) {
+            dp[i] = triangle.get(n - 1).get(i);
+        }
+
+        for (int i = n - 2; i >= 0; i--) {
+            for(int j = 0; j <= i; j++) {
+                dp[j] = triangle.get(i).get(j) + Math.min(dp[j],  dp[j + 1]);
             }
         }
 
-        return minPath[size - 1];
+        return dp[0];
     }
+//   就地更新
+//
+//    public int minimumTotal(List<List<Integer>> triangle) {
+//        int n = triangle.size();
+//
+//        for (int i = n - 2; i >= 0; i--) {
+//            for(int j = 0; j <= i; j++) {
+//                triangle.get(i).set(j, triangle.get(i).get(j) + Math.min(triangle.get(i + 1).get(j),  triangle.get(i + 1).get(j + 1)));
+//            }
+//        }
+//
+//        return triangle.get(0).get(0);
+//    }
 }
