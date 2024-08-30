@@ -29,5 +29,7 @@ public class Main {
         System.out.println(solution.longestPalindrome("a")); // "a"
 
         System.out.println(solution.longestPalindrome("ac")); // "a"
+
+        System.out.println(solution.longestPalindrome("aaaa")); // "aaaa"
     }
 }
