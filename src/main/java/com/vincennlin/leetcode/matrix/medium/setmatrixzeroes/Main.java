@@ -54,5 +54,15 @@ public class Main {
         // 0 0 0 0
         // 0 4 5 0
         // 0 3 1 0
+
+        // [[1,0]]
+        int[][] matrix3 = new int[][]{{1, 0}};
+        solution.setZeroes(matrix3);
+        for (int[] row : matrix3) {
+            for (int num : row) {
+                System.out.print(num + " ");
+            }
+            System.out.println();
+        }
     }
 }
