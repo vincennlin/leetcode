@@ -10,11 +10,9 @@ class Solution {
         for (String str : strs) {
             char[] charArray = str.toCharArray();
             Arrays.sort(charArray);
-
             String sortedStr = String.valueOf(charArray);
-            List<String> anagramList = anagramMap.getOrDefault(sortedStr, new ArrayList<>());
-            anagramList.add(str);
-            anagramMap.put(sortedStr, anagramList);
+
+            anagramMap.computeIfAbsent(sortedStr, k -> new ArrayList<>()).add(str);
         }
 
         return new ArrayList<>(anagramMap.values());
