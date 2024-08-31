@@ -34,5 +34,7 @@ public class Main {
         System.out.println(solution.canFinish(2, new int[][]{{1, 0}})); // true
 
         System.out.println(solution.canFinish(2, new int[][]{{1, 0}, {0, 1}})); // false
+
+        System.out.println(solution.canFinish(4, new int[][]{{1, 0}, {2, 1}, {3, 2}})); // true
     }
 }
