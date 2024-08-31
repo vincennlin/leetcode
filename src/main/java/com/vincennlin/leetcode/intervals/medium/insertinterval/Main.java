@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.array.medium.insertinterval;
+package com.vincennlin.leetcode.intervals.medium.insertinterval;
 
 import java.util.Arrays;
 

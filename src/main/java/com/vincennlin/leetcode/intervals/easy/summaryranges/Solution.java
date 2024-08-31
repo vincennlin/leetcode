@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.array.easy.summaryranges;
+package com.vincennlin.leetcode.intervals.easy.summaryranges;
 
 import java.util.ArrayList;
 import java.util.List;

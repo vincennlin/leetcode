@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.array.medium.mergeintervals;
+package com.vincennlin.leetcode.intervals.medium.mergeintervals;
 
 import java.util.Arrays;
 import java.util.Comparator;
