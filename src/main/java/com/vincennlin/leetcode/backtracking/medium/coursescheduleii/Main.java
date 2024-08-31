@@ -45,5 +45,8 @@ public class Main {
         System.out.println(Arrays.toString(solution.findOrder(4, new int[][]{{1, 0}, {2, 0}, {3, 1}, {3, 2}}))); // [0, 2, 1, 3]
 
         System.out.println(Arrays.toString(solution.findOrder(1, new int[][]{}))); // [0]
+
+        // numCourses = 1, prerequisites = []
+        System.out.println(Arrays.toString(solution.findOrder(1, new int[][]{}))); // [0]
     }
 }
