@@ -29,5 +29,8 @@ public class Main {
         System.out.println(solution.longestOnes(new int[]{1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0}, 2)); // 6
 
         System.out.println(solution.longestOnes(new int[]{0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1}, 3)); // 10
+
+        // [0,0,0,1]
+        System.out.println(solution.longestOnes(new int[]{0, 0, 0, 1}, 4)); // 4
     }
 }

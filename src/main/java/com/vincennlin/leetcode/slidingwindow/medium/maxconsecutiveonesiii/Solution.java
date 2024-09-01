@@ -2,6 +2,27 @@ package com.vincennlin.leetcode.slidingwindow.medium.maxconsecutiveonesiii;
 // 1004
 class Solution {
     public int longestOnes(int[] nums, int k) {
-        return 0;
+        int left = 0;
+        int right = 0;
+        int zeroCount = 0;
+        int maxLength = 0;
+
+        while (right < nums.length) {
+            if (nums[right] == 0) {
+                zeroCount++;
+            }
+
+            while (zeroCount > k) {
+                if (nums[left] == 0) {
+                    zeroCount--;
+                }
+                left++;
+            }
+
+            maxLength = Math.max(right - left + 1, maxLength);
+            right++;
+        }
+
+        return maxLength;
     }
 }
