@@ -1,29 +1,6 @@
 package com.vincennlin.leetcode.linkedlist.easy.linkedlistcycle;
-
-import java.util.List;
-
-/**
- * Definition for singly-linked list.
- * class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) {
- *         val = x;
- *         next = null;
- *     }
- * }
- */
+// 141
 public class Solution {
-
-    class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
-
     public boolean hasCycle(ListNode head) {
         ListNode slowNode = head;
         ListNode fastNode = head;
