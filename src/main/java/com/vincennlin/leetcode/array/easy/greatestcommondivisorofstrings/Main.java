@@ -33,5 +33,8 @@ public class Main {
         System.out.println(solution.gcdOfStrings("ABABAB", "ABAB")); // AB
 
         System.out.println(solution.gcdOfStrings("LEET", "CODE")); //
+
+
+        System.out.println(solution.gcdOfStrings("ABABABA", "ABAB")); //
     }
 }
