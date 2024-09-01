@@ -19,23 +19,22 @@ class Solution {
             nums2Set.add(num);
         }
 
-        List<Integer> nums1List = new ArrayList<>();
-        List<Integer> nums2List = new ArrayList<>();
+        List<List<Integer>> result = new ArrayList<>();
+        result.add(new ArrayList<>());
+        result.add(new ArrayList<>());
 
-        for (int num : nums1) {
+        for (int num : nums1Set) {
             if (!nums2Set.contains(num)) {
-                nums1List.add(num);
-                nums2Set.add(num);
+                result.get(0).add(num);
             }
         }
 
-        for (int num : nums2) {
+        for (int num : nums2Set) {
             if (!nums1Set.contains(num)) {
-                nums2List.add(num);
-                nums1Set.add(num);
+                result.get(1).add(num);
             }
         }
 
-        return List.of(nums1List, nums2List);
+        return result;
     }
 }
