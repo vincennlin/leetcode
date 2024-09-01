@@ -10,15 +10,14 @@ class Solution {
         int first = 0;
         int second = 1;
         int third = 1;
-        int current = first + second + third;
 
-        for (int i = 0; i < n - 3; i++) {
+        for (int i = 3; i <= n; i++) {
+            int current = first + second + third;
             first = second;
             second = third;
             third = current;
-            current = first + second + third;
         }
 
-        return current;
+        return third;
     }
 }
