@@ -7,28 +7,24 @@ class Solution {
     public int equalPairs(int[][] grid) {
         int n = grid.length;
 
-        Set<List<Integer>> rowSet = new HashSet<>();
+        Map<List<Integer>, Integer> rowMap = new HashMap<>();
 
         for (int i = 0; i < n; i++) {
             List<Integer> row = new ArrayList<>();
             for(int j = 0; j < n; j++) {
                 row.add(grid[i][j]);
             }
-            rowSet.add(row);
+            rowMap.put(row, rowMap.getOrDefault(row, 0) + 1);
         }
 
-        int pairs = n - rowSet.size();
+        int pairs = 0;
 
         for (int j = 0; j < n; j++) {
             List<Integer> col = new ArrayList<>();
             for (int[] ints : grid) {
                 col.add(ints[j]);
             }
-            if (rowSet.contains(col)) {
-                pairs++;
-            } else {
-                rowSet.add(col);
-            }
+            pairs += rowMap.getOrDefault(col, 0);
         }
 
         return pairs;
