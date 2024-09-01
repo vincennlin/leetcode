@@ -43,10 +43,10 @@ public class Main {
         root2.right = new TreeNode(1);
         root2.left.left = new TreeNode(6);
         root2.left.right = new TreeNode(7);
-        root2.left.right.left = new TreeNode(4);
-        root2.left.right.right = new TreeNode(2);
-        root2.right.left = new TreeNode(9);
-        root2.right.right = new TreeNode(8);
+        root2.right.left = new TreeNode(4);
+        root2.right.right = new TreeNode(2);
+        root2.right.right.left = new TreeNode(9);
+        root2.right.right.right = new TreeNode(8);
 
         System.out.println(solution.leafSimilar(root1, root2)); // true
 
