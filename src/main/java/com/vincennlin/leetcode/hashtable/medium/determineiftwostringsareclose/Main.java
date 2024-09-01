@@ -47,5 +47,11 @@ public class Main {
         System.out.println(solution.closeStrings("a", "aa")); // false
 
         System.out.println(solution.closeStrings("cabbba", "abbccc")); // true
+
+        // ["uau", "ssx"]
+        System.out.println(solution.closeStrings("uau", "ssx")); // false
+
+        // ["aaabbbbccddeeeeefffff", "aaaaabbcccdddeeeeffff"]
+        System.out.println(solution.closeStrings("aaabbbbccddeeeeefffff", "aaaaabbcccdddeeeeffff")); // false
     }
 }
