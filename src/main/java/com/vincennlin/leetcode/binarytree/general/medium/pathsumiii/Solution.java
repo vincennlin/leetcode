@@ -6,30 +6,27 @@ import java.util.*;
 class Solution {
     int count;
     public int pathSum(TreeNode root, int targetSum) {
-        List<Integer> sumList = new ArrayList<>();
+        Map<Long, Integer> pathSumMap = new HashMap<>();
+        pathSumMap.put(0L, 1);
         count = 0;
-        traverse(root, targetSum, sumList);
+        traverse(root, 0, targetSum, pathSumMap);
         return count;
     }
 
-    private void traverse(TreeNode currentNode, int targetSum, List<Integer> sumList) {
+    private void traverse(TreeNode currentNode, long currentSum, int targetSum, Map<Long, Integer> pathSumMap) {
         if (currentNode == null) return;
 
-        List<Integer> newSumList = new ArrayList<>();
-        for (int i = 0; i < sumList.size(); i++) {
-            int newSum = currentNode.val + sumList.get(i);
-            if (newSum == targetSum) {
-                count++;
-            }
-            newSumList.add(newSum);
-        }
-        if (currentNode.val == targetSum) {
-            count++;
-        }
-        newSumList.add(currentNode.val);
+        currentSum += currentNode.val;
 
-        traverse(currentNode.left, targetSum, newSumList);
+        if (pathSumMap.containsKey(currentSum - targetSum)) {
+            count += pathSumMap.get(currentSum - targetSum);
+        }
 
-        traverse(currentNode.right, targetSum, newSumList);
+        pathSumMap.put(currentSum, pathSumMap.getOrDefault(currentSum, 0) + 1);
+
+        traverse(currentNode.left, currentSum, targetSum, pathSumMap);
+        traverse(currentNode.right, currentSum, targetSum, pathSumMap);
+
+        pathSumMap.put(currentSum, pathSumMap.get(currentSum) - 1);
     }
 }
