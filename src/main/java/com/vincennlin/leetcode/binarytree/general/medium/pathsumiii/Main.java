@@ -47,5 +47,14 @@ public class Main {
         root2.right.right.left = new TreeNode(5);
         root2.right.right.right = new TreeNode(1);
         System.out.println(solution.pathSum(root2, 22)); // 3
+
+        // [1000000000,1000000000,null,294967296,null,1000000000,null,1000000000,null,1000000000]
+        TreeNode root3 = new TreeNode(1000000000);
+        root3.left = new TreeNode(1000000000);
+        root3.left.left = new TreeNode(294967296);
+        root3.left.left.left = new TreeNode(1000000000);
+        root3.left.left.left.left = new TreeNode(1000000000);
+        root3.left.left.left.left.left = new TreeNode(1000000000);
+        System.out.println(solution.pathSum(root3, 0)); // 0
     }
 }
