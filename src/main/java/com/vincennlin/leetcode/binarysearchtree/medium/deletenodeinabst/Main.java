@@ -48,7 +48,10 @@ public class Main {
         root1.left.left = new TreeNode(2);
         root1.left.right = new TreeNode(4);
         root1.right.right = new TreeNode(7);
-        System.out.println(solution.deleteNode(root1, 3)); // [5,4,6,2,null,null,7]
+        TreeNode result1 = solution.deleteNode(root1, 3);
+        printInOrder(result1);
+        // 2 4 5 6 7
+        System.out.println();
 
         TreeNode root2 = new TreeNode(5);
         root2.left = new TreeNode(3);
@@ -56,9 +59,22 @@ public class Main {
         root2.left.left = new TreeNode(2);
         root2.left.right = new TreeNode(4);
         root2.right.right = new TreeNode(7);
-        System.out.println(solution.deleteNode(root2, 0)); // [5,3,6,2,4,null,7]
+        TreeNode result2 = solution.deleteNode(root2, 0);
+        printInOrder(result2);
+        // 2 3 4 5 6 7
+        System.out.println();
 
         TreeNode root3 = null;
-        System.out.println(solution.deleteNode(root3, 0)); // []
+        TreeNode result3 = solution.deleteNode(root3, 0);
+        printInOrder(result3);
+        //
+    }
+
+    public static void printInOrder(TreeNode root) {
+        if (root != null) {
+            printInOrder(root.left);
+            System.out.print(root.val + " ");
+            printInOrder(root.right);
+        }
     }
 }
