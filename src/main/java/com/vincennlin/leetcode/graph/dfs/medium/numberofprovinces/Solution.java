@@ -1,20 +1,26 @@
 package com.vincennlin.leetcode.graph.dfs.medium.numberofprovinces;
 // 547
 class Solution {
-    int provinces;
     public int findCircleNum(int[][] isConnected) {
-        provinces = isConnected.length;
-        dfs(isConnected, 0);
+        boolean[] isVisited = new boolean[isConnected.length];
+        int provinces = 0;
+
+        for (int i = 0; i < isConnected.length; i++) {
+            if (!isVisited[i]) {
+                provinces++;
+                dfs(isConnected, isVisited, i);
+            }
+        }
         return provinces;
     }
 
-    private void dfs(int[][] isConnected, int current) {
-        for (int i = current + 1; i < isConnected.length; i++) {
-            if (isConnected[current][i] == 1) {
-                isConnected[i][current] = 0;
-                dfs(isConnected, current + 1);
-                provinces--;
+    private void dfs(int[][] isConnected, boolean[] isVisited, int i) {
+        for (int j = 0; j < isConnected.length; j++) {
+            if (isConnected[i][j] == 1 && !isVisited[j]) {
+                isVisited[j] = true;
+                dfs(isConnected, isVisited, j);
             }
         }
+
     }
 }
