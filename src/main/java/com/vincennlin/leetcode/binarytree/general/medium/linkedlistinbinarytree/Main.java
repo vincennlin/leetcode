@@ -73,5 +73,15 @@ public class Main {
         root3.left.right.right.left = new TreeNode(1);
         root3.left.right.right.right = new TreeNode(3);
         System.out.println(solution.isSubPath(head3, root3)); // false
+
+        // head = [1,10]
+        // root = [1,null,1,10,1,9]
+        ListNode head4 = new ListNode(1, new ListNode(10));
+        TreeNode root4 = new TreeNode(1);
+        root4.right = new TreeNode(1);
+        root4.right.left = new TreeNode(10);
+        root4.right.right = new TreeNode(1);
+        root4.right.right.left = new TreeNode(9);
+        System.out.println(solution.isSubPath(head4, root4)); // true
     }
 }
