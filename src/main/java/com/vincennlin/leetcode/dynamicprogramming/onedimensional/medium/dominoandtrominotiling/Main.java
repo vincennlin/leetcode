@@ -32,5 +32,13 @@ public class Main {
         System.out.println(solution.numTilings(3)); // 5
 
         System.out.println(solution.numTilings(1)); // 1
+
+        System.out.println(solution.numTilings(4)); // 11
+
+        System.out.println(solution.numTilings(5)); // 24
+
+        System.out.println(solution.numTilings(6)); // 53
+
+        System.out.println(solution.numTilings(60)); // 882347204
     }
 }
