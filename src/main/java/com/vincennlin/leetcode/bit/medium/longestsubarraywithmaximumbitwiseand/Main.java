@@ -41,5 +41,14 @@ public class Main {
         System.out.println(solution.longestSubarray(new int[]{1,2,3,3,2,2})); // 2
 
         System.out.println(solution.longestSubarray(new int[]{1,2,3,4})); // 1
+
+        // {1, 2, 3, 3, 2, 2, 3, 3};
+        System.out.println(solution.longestSubarray(new int[]{1,2,3,3,2,2,3,3})); // 2
+
+        // [100,5,5]
+        System.out.println(solution.longestSubarray(new int[]{100,5,5})); // 2
+
+        // [323376,323376,323376,323376,323376,323376,323376,75940,75940]
+        System.out.println(solution.longestSubarray(new int[]{323376,323376,323376,323376,323376,323376,323376,75940,75940})); // 7
     }
 }
