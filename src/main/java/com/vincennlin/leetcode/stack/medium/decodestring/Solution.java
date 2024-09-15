@@ -7,28 +7,32 @@ import java.util.Deque;
 class Solution {
     public String decodeString(String s) {
         Deque<Integer> countStack = new ArrayDeque<>();
-        Deque<String> stringStack = new ArrayDeque<>();
-        String currentString = "";
+        Deque<StringBuilder> stringStack = new ArrayDeque<>();
+        StringBuilder currentString = new StringBuilder();
         int k = 0;
 
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
+
             if (Character.isDigit(c)) {
-                k = 10 * k + Integer.parseInt(String.valueOf(c));
+                k = 10 * k + Character.getNumericValue(c);
             } else if (Character.isLetter(c)) {
-                currentString += c;
+                currentString.append(c);
             } else if (c == '[') {
-                countStack.add(k);
+                countStack.push(k);
                 k = 0;
-                stringStack.add(currentString);
-                currentString = "";
+                stringStack.push(currentString);
+                currentString = new StringBuilder();
             } else if (c == ']') {
-                int count = countStack.removeLast();
-                String string = stringStack.removeLast();
-                currentString = string + currentString.repeat(count);
+                int count = countStack.pop();
+                StringBuilder sb = stringStack.pop();
+                for (int j = 0; j < count; j++) {
+                    sb.append(currentString);
+                }
+                currentString = sb;
             }
         }
 
-        return currentString;
+        return currentString.toString();
     }
 }
