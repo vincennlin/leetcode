@@ -45,28 +45,19 @@ public class Main {
         root1.right = new TreeNode(1);
         root1.right.left = new TreeNode(1);
         root1.right.right = new TreeNode(1);
-        root1.right.left.left = new TreeNode(1);
         root1.right.right.right = new TreeNode(1);
-        root1.right.left.left.left = new TreeNode(1);
-        root1.right.left.left.right = new TreeNode(1);
-        root1.right.right.right.right = new TreeNode(1);
-        root1.right.left.left.left.right = new TreeNode(1);
-        root1.right.right.right.right.right = new TreeNode(1);
-        root1.right.left.left.left.right.left = new TreeNode(1);
-        root1.right.right.right.right.right.right = new TreeNode(1);
-        root1.right.left.left.left.right.left.left = new TreeNode(1);
-        root1.right.right.right.right.right.right.right = new TreeNode(1);
+        root1.right.right.left = new TreeNode(1);
+        root1.right.right.left.right = new TreeNode(1);
+        root1.right.right.left.right.right = new TreeNode(1);
         System.out.println(solution.longestZigZag(root1)); // 3
 
         TreeNode root2 = new TreeNode(1);
         root2.left = new TreeNode(1);
         root2.right = new TreeNode(1);
         root2.left.right = new TreeNode(1);
-        root2.right.right = new TreeNode(1);
         root2.left.right.left = new TreeNode(1);
-        root2.right.right.right = new TreeNode(1);
+        root2.left.right.right = new TreeNode(1);
         root2.left.right.left.right = new TreeNode(1);
-        root2.right.right.right.right = new TreeNode(1);
         System.out.println(solution.longestZigZag(root2)); // 4
 
         TreeNode root3 = new TreeNode(1);
