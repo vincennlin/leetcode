@@ -1,27 +1,26 @@
 package com.vincennlin.leetcode.math.medium.minimumtimedifference;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
 // 539
 class Solution {
     public int findMinDifference(List<String> timePoints) {
 
-        PriorityQueue<Integer> minutes = new PriorityQueue<>();
+        List<Integer> minutes = new ArrayList<>();
 
         for (String timePoint : timePoints) {
             minutes.add(toMinute(timePoint));
         }
 
-        int firstMinute = minutes.peek();
+        Collections.sort(minutes);
+
         int minDiff = Integer.MAX_VALUE;
 
-        while (minutes.size() > 1) {
-            minDiff = Math.min(minDiff, -(minutes.poll() - minutes.peek()));
+        for (int i = 1; i < minutes.size(); i++) {
+            minDiff = Math.min(minDiff, minutes.get(i) - minutes.get(i - 1));
         }
 
-        minDiff = Math.min(minDiff, firstMinute + 1440 - (minutes.peek()));
+        minDiff = Math.min(minDiff, 1440 + minutes.get(0) - minutes.get(minutes.size() - 1));
 
         return minDiff;
     }

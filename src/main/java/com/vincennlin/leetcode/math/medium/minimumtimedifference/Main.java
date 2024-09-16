@@ -28,5 +28,8 @@ public class Main {
         System.out.println(solution.findMinDifference(List.of("23:59", "00:00"))); // 1
 
         System.out.println(solution.findMinDifference(List.of("00:00", "23:59", "00:00"))); // 0
+
+        // ["12:12","12:13"]
+        System.out.println(solution.findMinDifference(List.of("12:12", "12:13"))); // 1
     }
 }
