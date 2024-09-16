@@ -5,22 +5,22 @@ import java.util.*;
 // 539
 class Solution {
     public int findMinDifference(List<String> timePoints) {
+        int m = timePoints.size();
+        int[] minutes = new int[m];
 
-        List<Integer> minutes = new ArrayList<>();
-
-        for (String timePoint : timePoints) {
-            minutes.add(toMinute(timePoint));
+        for (int i = 0; i < m; i++) {
+            minutes[i] = toMinute(timePoints.get(i));
         }
 
-        Collections.sort(minutes);
+        Arrays.sort(minutes);
 
         int minDiff = Integer.MAX_VALUE;
 
-        for (int i = 1; i < minutes.size(); i++) {
-            minDiff = Math.min(minDiff, minutes.get(i) - minutes.get(i - 1));
+        for (int i = 1; i < m; i++) {
+            minDiff = Math.min(minDiff, minutes[i] - minutes[i - 1]);
         }
 
-        minDiff = Math.min(minDiff, 1440 + minutes.get(0) - minutes.get(minutes.size() - 1));
+        minDiff = Math.min(minDiff, 1440 + minutes[0] - minutes[m - 1]);
 
         return minDiff;
     }
