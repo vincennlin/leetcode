@@ -37,5 +37,8 @@ public class Main {
         System.out.println(solution.minFlips(4, 2, 7)); // 1
 
         System.out.println(solution.minFlips(1, 2, 3)); // 0
+
+        // a = 8, b = 3, c = 5
+        System.out.println(solution.minFlips(8, 3, 5)); // 3
     }
 }
