@@ -6,22 +6,21 @@ import java.util.*;
 class Solution {
     public String[] uncommonFromSentences(String s1, String s2) {
         Map<String, Integer> stringCountMap = new HashMap<>();
+
         for (String s : s1.split(" ")) {
             stringCountMap.put(s, stringCountMap.getOrDefault(s, 0) + 1);
         }
         for (String s : s2.split(" ")) {
             stringCountMap.put(s, stringCountMap.getOrDefault(s, 0) + 1);
         }
+
         List<String> resultList = new ArrayList<>();
-        for (String str : stringCountMap.keySet()) {
-            if (stringCountMap.get(str) == 1) {
-                resultList.add(str);
+        for (Map.Entry<String, Integer> entry : stringCountMap.entrySet()) {
+            if (entry.getValue() == 1) {
+                resultList.add(entry.getKey());
             }
         }
-        String[] resultArray = new String[resultList.size()];
-        for (int i = 0; i < resultArray.length; i++) {
-            resultArray[i] = resultList.get(i);
-        }
-        return resultArray;
+
+        return resultList.toArray(new String[0]);
     }
 }
