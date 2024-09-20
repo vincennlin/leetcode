@@ -29,6 +29,8 @@ public class Main {
 
         System.out.println(solution.shortestPalindrome("aacecaaa")); // "aaacecaaa"
 
+        System.out.println(solution.shortestPalindrome("ababc")); // "cbababc"
+
         System.out.println(solution.shortestPalindrome("abcd")); // "dcbabcd"
     }
 }
