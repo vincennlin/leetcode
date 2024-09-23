@@ -34,5 +34,10 @@ public class Main {
         System.out.println(solution.minExtraChar("leetscode", new String[]{"leet", "code", "leetcode"})); // 1
 
         System.out.println(solution.minExtraChar("sayhelloworld", new String[]{"hello", "world"})); // 3
+
+        // s = "kevlplxozaizdhxoimmraiakbak"
+        // dictionary = ["yv","bmab","hv","bnsll","mra","jjqf","g","aiyzi","ip","pfctr","flr","ybbcl","biu","ke","lpl","iak","pirua","ilhqd","zdhx","fux","xaw","pdfvt","xf","t","wq","r","cgmud","aokas","xv","jf","cyys","wcaz","rvegf","ysg","xo","uwb","lw","okgk","vbmi","v","mvo","fxyx","ad","e"]
+        System.out.println(solution.minExtraChar("kevlplxozaizdhxoimmraiakbak", new String[]{"yv","bmab","hv","bnsll","mra","jjqf","g","aiyzi","ip","pfctr","flr","ybbcl","biu","ke","lpl","iak","pirua","ilhqd","zdhx","fux","xaw","pdfvt","xf","t","wq","r","cgmud","aokas","xv","jf","cyys","wcaz","rvegf","ysg","xo","uwb","lw","okgk","vbmi","v","mvo","fxyx","ad","e"}));
+        // 9
     }
 }
