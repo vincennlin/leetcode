@@ -39,5 +39,8 @@ public class Main {
         System.out.println(solution.suggestedProducts(new String[] {"mobile", "mouse", "moneypot", "monitor", "mousepad"}, "mouse")); // [["mobile","moneypot","monitor"],["mobile","moneypot","monitor"],["mouse","mousepad"],["mouse","mousepad"],["mouse","mousepad"]]
 
         System.out.println(solution.suggestedProducts(new String[] {"havana"}, "havana")); // [["havana"],["havana"],["havana"],["havana"],["havana"],["havana"]]
+
+        // products = ["havana"], searchWord = "tatiana"
+        System.out.println(solution.suggestedProducts(new String[] {"havana"}, "tatiana")); // [[],[],[],[],[],[],[]]
     }
 }
