@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.linkedlist.hard;
+package com.vincennlin.leetcode.design.hard.alloonedatastructure;
 /*
 Design a data structure to store the strings' count with the ability to return the strings with minimum and maximum counts.
 

@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.array.medium.mycalendari;
+package com.vincennlin.leetcode.design.medium.mycalendari;
 
 import java.util.Map;
 import java.util.TreeMap;

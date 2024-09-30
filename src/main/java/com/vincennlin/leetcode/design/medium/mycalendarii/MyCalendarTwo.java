@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.array.medium.mycalendarii;
+package com.vincennlin.leetcode.design.medium.mycalendarii;
 
 import java.util.ArrayList;
 import java.util.List;

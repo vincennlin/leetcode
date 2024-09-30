@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.array.medium.mycalendari;
+package com.vincennlin.leetcode.design.medium.mycalendari;
 /*
 You are implementing a program to use as your calendar. We can add a new event if adding the event will not cause a double booking.
 

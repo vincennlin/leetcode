@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.linkedlist.medium.designcirculardeque;
+package com.vincennlin.leetcode.design.medium.designcirculardeque;
 /*
 Design your implementation of the circular double-ended queue (deque).
 

@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.linkedlist.medium.designcirculardeque;
+package com.vincennlin.leetcode.design.medium.designcirculardeque;
 // 641
 class MyCircularDeque {
 

@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.linkedlist.hard;
+package com.vincennlin.leetcode.design.hard.alloonedatastructure;
 // 432
 class AllOne {
 
