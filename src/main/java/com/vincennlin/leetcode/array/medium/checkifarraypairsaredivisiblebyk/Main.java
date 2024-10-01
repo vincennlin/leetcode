@@ -40,6 +40,9 @@ Solution solution = new Solution();
 
         System.out.println(solution.canArrange(new int[]{1, 2, 3, 4, 5, 6}, 7)); // true
 
-        System.out.println(solution.canArrange(new int[]{1, 2, 3, 4, 5, 6}, 10)); // false
+        System.out.println(solution.canArrange(new int[]{1, 2, 3, 4, 5, 6}, 10)); // false\
+
+        // [-1,1,-2,2,-3,3,-4,4], k = 3
+        System.out.println(solution.canArrange(new int[]{-1, 1, -2, 2, -3, 3, -4, 4}, 3)); // true
     }
 }
