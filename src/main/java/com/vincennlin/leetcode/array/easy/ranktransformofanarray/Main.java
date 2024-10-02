@@ -45,5 +45,9 @@ public class Main {
 
         int[] result3 = solution.arrayRankTransform(new int[]{37, 12, 28, 9, 100, 56, 80, 5, 12});
         System.out.println(Arrays.toString(result3)); // [5, 3, 4, 2, 8, 6, 7, 1, 3]
+
+        // [40,10,10,20,30]
+        int[] result4 = solution.arrayRankTransform(new int[]{40, 10, 10, 20, 30});
+        System.out.println(Arrays.toString(result4)); // [4, 1, 1, 2, 3]
     }
 }
