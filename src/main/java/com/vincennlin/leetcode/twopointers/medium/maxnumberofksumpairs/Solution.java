@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.twopointer.medium.maxnumberofksumpairs;
+package com.vincennlin.leetcode.twopointers.medium.maxnumberofksumpairs;
 
 import java.util.Arrays;
 

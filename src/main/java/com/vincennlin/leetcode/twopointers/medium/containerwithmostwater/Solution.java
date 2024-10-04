@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.twopointer.medium.containerwithmostwater;
+package com.vincennlin.leetcode.twopointers.medium.containerwithmostwater;
 //11
 class Solution {
     public int maxArea(int[] height) {

@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.twopointer.medium.threesum;
+package com.vincennlin.leetcode.twopointers.medium.threesum;
 
 import java.util.*;
 

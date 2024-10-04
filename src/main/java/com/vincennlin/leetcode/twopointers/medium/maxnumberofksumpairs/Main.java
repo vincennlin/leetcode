@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.twopointer.medium.maxnumberofksumpairs;
+package com.vincennlin.leetcode.twopointers.medium.maxnumberofksumpairs;
 /*
 You are given an integer array nums and an integer k.
 

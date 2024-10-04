@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.twopointer.medium.containerwithmostwater;
+package com.vincennlin.leetcode.twopointers.medium.containerwithmostwater;
 /*
 You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).
 

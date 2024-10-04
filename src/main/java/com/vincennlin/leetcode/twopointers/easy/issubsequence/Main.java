@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.twopointer.easy.issubsequence;
+package com.vincennlin.leetcode.twopointers.easy.issubsequence;
 
 public class Main {
     public static void main(String[] args) {
