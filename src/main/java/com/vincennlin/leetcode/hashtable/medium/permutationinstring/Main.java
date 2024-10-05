@@ -31,5 +31,8 @@ public class Main {
         System.out.println(solution.checkInclusion("ab", "eidbaooo")); // true
 
         System.out.println(solution.checkInclusion("ab", "eidboaoo")); // false
+
+        // s1 = "adc", s2 = "dcda"
+        System.out.println(solution.checkInclusion("adc", "dcda")); // true
     }
 }
