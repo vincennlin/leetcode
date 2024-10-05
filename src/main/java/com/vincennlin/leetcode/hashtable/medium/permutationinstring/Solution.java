@@ -5,23 +5,26 @@ import java.util.Arrays;
 // 567
 class Solution {
     public boolean checkInclusion(String s1, String s2) {
-        int[] zeroArray = new int[26];
-        int[] freq = new int[26];
-        for (int i = 0; i <= s2.length() - s1.length(); i++) {
-            Arrays.fill(freq, 0);
-            for (int j = i; j < i + s1.length(); j++) {
-                freq[s2.charAt(j) - 'a']++;
-            }
+        int m = s1.length();
+        int n = s2.length();
 
-            for (char c1 : s1.toCharArray()) {
-                --freq[c1 - 'a'];
-            }
+        if (m > n) return false;
 
-            if (Arrays.compare(freq, zeroArray) == 0) {
-                return true;
-            }
+        int[] s1Freq = new int[26];
+        int[] s2Freq = new int[26];
+        for (int i = 0; i < s1.length(); i++) {
+            s1Freq[s1.charAt(i) - 'a']++;
+            s2Freq[s2.charAt(i) - 'a']++;
         }
 
-        return false;
+        for (int i = 0; i < n - m; i++) {
+            if (Arrays.compare(s1Freq, s2Freq) == 0) {
+                return true;
+            }
+            s2Freq[s2.charAt(i) - 'a']--;
+            s2Freq[s2.charAt(i + m) - 'a']++;
+        }
+
+        return Arrays.compare(s1Freq, s2Freq) == 0;
     }
 }
