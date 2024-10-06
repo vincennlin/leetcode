@@ -59,5 +59,8 @@ Solution solution = new Solution();
         System.out.println(solution.areSentencesSimilar("of", "A lot of words")); // false
 
         System.out.println(solution.areSentencesSimilar("Eating right now", "Eating")); // true
+
+        // s1 = "A A AAa", s2 = "A AAa"
+        System.out.println(solution.areSentencesSimilar("A A AAa", "A AAa")); // true
     }
 }
