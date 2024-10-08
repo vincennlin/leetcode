@@ -51,5 +51,8 @@ public class Main {
         System.out.println(solution.minSwaps("]]][[")); // 2
 
         System.out.println(solution.minSwaps("[]")); // 0
+
+        // "[[[]]]][][]][[]]][[["
+        System.out.println(solution.minSwaps("[[[]]]][][]][[]]][[[")); // 2
     }
 }
