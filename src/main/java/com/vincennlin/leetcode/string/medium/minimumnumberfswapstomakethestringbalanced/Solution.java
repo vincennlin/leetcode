@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.twopointers.medium.minimumnumberfswapstomakethestringbalanced;
+package com.vincennlin.leetcode.string.medium.minimumnumberfswapstomakethestringbalanced;
 // 1963
 class Solution {
     public int minSwaps(String s) {

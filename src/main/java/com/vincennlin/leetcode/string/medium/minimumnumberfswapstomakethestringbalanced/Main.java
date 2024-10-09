@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.twopointers.medium.minimumnumberfswapstomakethestringbalanced;
+package com.vincennlin.leetcode.string.medium.minimumnumberfswapstomakethestringbalanced;
 /*
 You are given a 0-indexed string s of even length n. The string consists of exactly n / 2 opening brackets '[' and n / 2 closing brackets ']'.
 
