@@ -34,5 +34,8 @@ public class Main {
         System.out.println(solution.minAddToMakeValid("())")); // 1
 
         System.out.println(solution.minAddToMakeValid("(((")); // 3
+
+        // "()))(("
+        System.out.println(solution.minAddToMakeValid("()))((")); // 4
     }
 }
