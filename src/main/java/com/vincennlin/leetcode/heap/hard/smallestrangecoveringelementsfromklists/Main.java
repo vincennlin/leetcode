@@ -1,5 +1,6 @@
 package com.vincennlin.leetcode.heap.hard.smallestrangecoveringelementsfromklists;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -37,10 +38,10 @@ public class Main {
         Solution solution = new Solution();
 
 
-        int[] result1 = solution.smallestRange(List.of(List.of(4,10,15,24,26), List.of(0,9,12,20), List.of(5,18,22,30)));
+        int[] result1 = solution.smallestRange(List.of(new ArrayList<>(Arrays.asList(4,10,15,24,26)), new ArrayList<>(Arrays.asList(0,9,12,20)), new ArrayList<>(Arrays.asList(5,18,22,30))));
         System.out.println(Arrays.toString(result1)); // [20, 24]
 
-        int[] result2 = solution.smallestRange(List.of(List.of(1,2,3), List.of(1,2,3), List.of(1,2,3)));
+        int[] result2 = solution.smallestRange(List.of(new ArrayList<>(Arrays.asList(1,2,3)), new ArrayList<>(Arrays.asList(1,2,3)), new ArrayList<>(Arrays.asList(1,2,3))));
         System.out.println(Arrays.toString(result2)); // [1, 1]
     }
 }
