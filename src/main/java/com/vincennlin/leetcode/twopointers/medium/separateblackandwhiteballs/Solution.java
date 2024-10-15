@@ -3,13 +3,12 @@ package com.vincennlin.leetcode.twopointers.medium.separateblackandwhiteballs;
 class Solution {
     public long minimumSteps(String s) {
         long totalSwaps = 0;
-        int blackBallCount = 0;
+        int whitePosition = 0;
 
-        for (char c : s.toCharArray()) {
-            if (c == '0') {
-                totalSwaps += blackBallCount;
-            } else {
-                blackBallCount++;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '0') {
+                totalSwaps += i - whitePosition;
+                whitePosition++;
             }
         }
 
