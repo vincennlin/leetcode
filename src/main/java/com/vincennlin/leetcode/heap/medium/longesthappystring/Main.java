@@ -37,5 +37,8 @@ public class Main {
         System.out.println(solution.longestDiverseString(1, 1, 7)); // ccaccbcc
 
         System.out.println(solution.longestDiverseString(7, 1, 0)); // aabaa
+
+        // 2 2 1
+        System.out.println(solution.longestDiverseString(2, 2, 1)); // aabbc
     }
 }
