@@ -29,5 +29,8 @@ public class Main {
         System.out.println(solution.maximumSwap(2736)); // 7236
 
         System.out.println(solution.maximumSwap(9973)); // 9973
+
+        // 98368
+        System.out.println(solution.maximumSwap(98368)); // 98863
     }
 }
