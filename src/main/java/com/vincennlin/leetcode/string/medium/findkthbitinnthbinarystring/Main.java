@@ -42,5 +42,8 @@ public class Main {
         System.out.println(solution.findKthBit(3, 1)); // 0
 
         System.out.println(solution.findKthBit(4, 11)); // 1
+
+        // n = 3, k = 2
+        System.out.println(solution.findKthBit(3, 2)); // 1
     }
 }
