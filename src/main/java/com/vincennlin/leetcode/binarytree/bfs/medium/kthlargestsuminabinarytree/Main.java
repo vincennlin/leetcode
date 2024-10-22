@@ -55,5 +55,15 @@ public class Main {
         root2.left = new TreeNode(2);
         root2.left.right = new TreeNode(3);
         System.out.println(solution.kthLargestLevelSum(root2, 1)); // 3
+
+        // [5,8,9,2,1,3,7], 4
+        TreeNode root3 = new TreeNode(5);
+        root3.left = new TreeNode(8);
+        root3.right = new TreeNode(9);
+        root3.left.left = new TreeNode(2);
+        root3.left.right = new TreeNode(1);
+        root3.right.left = new TreeNode(3);
+        root3.right.right = new TreeNode(7);
+        System.out.println(solution.kthLargestLevelSum(root3, 4)); // -1
     }
 }
