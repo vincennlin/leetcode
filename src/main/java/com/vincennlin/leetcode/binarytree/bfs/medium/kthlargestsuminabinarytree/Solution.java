@@ -5,7 +5,7 @@ import java.util.*;
 // 2583
 class Solution {
     public long kthLargestLevelSum(TreeNode root, int k) {
-        List<Long> sumList = new ArrayList<>();
+        Queue<Long> pq = new PriorityQueue<>((a, b) -> Long.compare(b, a));
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
 
@@ -22,11 +22,19 @@ class Solution {
                 }
                 sum += node.val;
             }
-            sumList.add(sum);
+            pq.add(sum);
         }
 
-        sumList.sort(Comparator.reverseOrder());
+        if (k > pq.size()) {
+            return -1;
+        }
 
-        return k <= sumList.size() ? sumList.get(k - 1) : -1;
+        long result = 0;
+        while (k != 0) {
+            result = pq.poll();
+            k--;
+        }
+
+        return result;
     }
 }
