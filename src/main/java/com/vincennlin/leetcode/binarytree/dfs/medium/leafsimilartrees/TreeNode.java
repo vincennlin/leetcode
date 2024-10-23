@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.binarytree.dfs.longestzigzagpathinabinarytree;
+package com.vincennlin.leetcode.binarytree.dfs.medium.leafsimilartrees;
 
 public class TreeNode {
     int val;

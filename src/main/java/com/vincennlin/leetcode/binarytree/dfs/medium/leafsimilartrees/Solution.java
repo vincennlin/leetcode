@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.binarytree.dfs.leafsimilartrees;
+package com.vincennlin.leetcode.binarytree.dfs.medium.leafsimilartrees;
 
 import java.util.ArrayList;
 import java.util.List;

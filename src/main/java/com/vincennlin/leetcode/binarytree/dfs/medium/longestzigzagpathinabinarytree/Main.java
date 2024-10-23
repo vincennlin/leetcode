@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.binarytree.dfs.longestzigzagpathinabinarytree;
+package com.vincennlin.leetcode.binarytree.dfs.medium.longestzigzagpathinabinarytree;
 /*
 You are given the root of a binary tree.
 

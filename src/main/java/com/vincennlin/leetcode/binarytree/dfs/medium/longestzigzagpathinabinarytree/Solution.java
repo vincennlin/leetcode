@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.binarytree.dfs.longestzigzagpathinabinarytree;
+package com.vincennlin.leetcode.binarytree.dfs.medium.longestzigzagpathinabinarytree;
 // 1372
 class Solution {
     private int maxLength;
