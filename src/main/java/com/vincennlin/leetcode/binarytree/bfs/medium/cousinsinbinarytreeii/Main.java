@@ -46,10 +46,10 @@ public class Main {
         root1.left = new TreeNode(4);
         root1.right = new TreeNode(9);
         root1.left.left = new TreeNode(1);
-        root1.right.left = new TreeNode(10);
+        root1.left.right = new TreeNode(10);
         root1.right.right = new TreeNode(7);
         TreeNode result1 = solution.replaceValueInTree(root1);
-        printTree(result1); // 0 0 0 7 7 0 11
+        printTree(result1);
 
         System.out.println();
 
@@ -57,15 +57,17 @@ public class Main {
         root2.left = new TreeNode(1);
         root2.right = new TreeNode(2);
         TreeNode result2 = solution.replaceValueInTree(root2);
-        printTree(result2); // 0 0 0
+        printTree(result2);
+
+        System.out.println();
     }
 
     private static void printTree(TreeNode root) {
         if (root == null) {
             return;
         }
-        System.out.print(root.val + " ");
         printTree(root.left);
+        System.out.print(root.val + " ");
         printTree(root.right);
     }
 }
