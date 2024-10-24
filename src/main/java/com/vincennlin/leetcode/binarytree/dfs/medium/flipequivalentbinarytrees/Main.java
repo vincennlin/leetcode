@@ -52,5 +52,16 @@ public class Main {
         root2.right.right.left = new TreeNode(8);
 
         System.out.println(solution.flipEquiv(root1, root2)); // true
+
+        // root1 = [6,1,0], root2 = [6,null,1]
+
+        TreeNode root3 = new TreeNode(6);
+        root3.left = new TreeNode(1);
+        root3.right = new TreeNode(0);
+
+        TreeNode root4 = new TreeNode(6);
+        root4.right = new TreeNode(1);
+
+        System.out.println(solution.flipEquiv(root3, root4)); // false
     }
 }
