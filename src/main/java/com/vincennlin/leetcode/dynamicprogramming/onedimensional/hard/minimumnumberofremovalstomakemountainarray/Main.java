@@ -35,5 +35,11 @@ public class Main {
         System.out.println(solution.minimumMountainRemovals(new int[]{1,3,1})); // 0
 
         System.out.println(solution.minimumMountainRemovals(new int[]{2,1,1,5,6,2,3,1})); // 3
+
+        // nums = [4,3,2,1,1,2,3,1]
+        System.out.println(solution.minimumMountainRemovals(new int[]{4,3,2,1,1,2,3,1})); // 4
+
+        // nums = [100,92,89,77,74,66,64,66,64]
+        System.out.println(solution.minimumMountainRemovals(new int[]{100,92,89,77,74,66,64,66,64})); // 6
     }
 }
