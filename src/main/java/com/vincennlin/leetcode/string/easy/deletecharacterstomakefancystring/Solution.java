@@ -2,6 +2,14 @@ package com.vincennlin.leetcode.string.easy.deletecharacterstomakefancystring;
 // 1957
 class Solution {
     public String makeFancyString(String s) {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        for (char c : s.toCharArray()) {
+            if (sb.length() < 2 || sb.charAt(sb.length() - 1) != c || sb.charAt(sb.length() - 2) != c) {
+                sb.append(c);
+            }
+        }
+
+        return sb.toString();
     }
 }
