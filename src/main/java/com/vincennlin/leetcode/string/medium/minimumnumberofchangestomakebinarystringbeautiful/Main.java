@@ -48,5 +48,8 @@ public class Main {
         System.out.println(solution.minChanges("10")); // 1
 
         System.out.println(solution.minChanges("0000")); // 0
+
+        // "01010001"
+        System.out.println(solution.minChanges("01010001")); // 3
     }
 }
