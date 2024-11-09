@@ -39,5 +39,8 @@ public class Main {
         System.out.println(solution.minEnd(3, 4)); // 6
 
         System.out.println(solution.minEnd(2, 7)); // 15
+
+        // n = 6715154, x = 7193485
+        System.out.println(solution.minEnd(6715154, 7193485)); // 55012476815
     }
 }
