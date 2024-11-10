@@ -57,5 +57,8 @@ public class Main {
         System.out.println(solution.minimumSubarrayLength(new int[]{2, 1, 8}, 10)); // 3
 
         System.out.println(solution.minimumSubarrayLength(new int[]{1, 2}, 0)); // 1
+
+        // nums = [1,2,32,21], k = 55
+        System.out.println(solution.minimumSubarrayLength(new int[]{1, 2, 32, 21}, 55)); // 3
     }
 }
