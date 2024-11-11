@@ -45,5 +45,11 @@ public class Main {
         System.out.println(solution.primeSubOperation(new int[]{6, 8, 11, 12})); // true
 
         System.out.println(solution.primeSubOperation(new int[]{5, 8, 3})); // false
+
+        // nums = [2,2]
+        System.out.println(solution.primeSubOperation(new int[]{2, 2})); // false;
+
+        // nums = [998, 2]
+        System.out.println(solution.primeSubOperation(new int[]{998, 2})); // true
     }
 }
