@@ -2,6 +2,27 @@ package com.vincennlin.leetcode.slidingwindow.easy.defusethebomb;
 // 1652
 class Solution {
     public int[] decrypt(int[] code, int k) {
-        return null;
+        int n = code.length;
+        int[] result = new int[n];
+
+        if (k == 0) {
+            return result;
+        }
+
+        for (int i = 0; i < n; i++) {
+            int val = 0;
+            if (k > 0) {
+                for (int j = 1; j <= k; j++) {
+                    val += code[(i + j) % n];
+                }
+            } else {
+                for (int j = -1; j >= k; j--) {
+                    val += code[(i + j + n) % n];
+                }
+            }
+            result[i] = val;
+        }
+
+        return result;
     }
 }
