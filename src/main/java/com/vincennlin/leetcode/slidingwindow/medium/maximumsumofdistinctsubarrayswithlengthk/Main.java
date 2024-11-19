@@ -42,5 +42,8 @@ public class Main {
         System.out.println(solution.maximumSubarraySum(new int[]{1, 5, 4, 2, 9, 9, 9}, 3)); // 15
 
         System.out.println(solution.maximumSubarraySum(new int[]{4, 4, 4}, 3)); // 0
+
+        // nums = [9,9,9,1,2,3], k = 3
+        System.out.println(solution.maximumSubarraySum(new int[]{9, 9, 9, 1, 2, 3}, 3)); // 12
     }
 }
