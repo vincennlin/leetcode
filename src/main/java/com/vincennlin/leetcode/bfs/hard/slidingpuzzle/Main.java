@@ -54,5 +54,9 @@ public class Main {
 
         int[][] board3 = new int[][]{{4, 1, 2}, {5, 0, 3}};
         System.out.println(solution.slidingPuzzle(board3)); // 5
+
+        // [[3,0,1],[2,4,5]]
+        int[][] board4 = new int[][]{{3, 0, 1}, {2, 4, 5}};
+        System.out.println(solution.slidingPuzzle(board4)); // 14
     }
 }
