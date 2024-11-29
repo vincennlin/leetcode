@@ -50,5 +50,8 @@ public class Main {
         System.out.println(solution.minimumTime(new int[][]{{0, 1, 3, 2}, {5, 1, 2, 5}, {4, 3, 8, 6}})); // 7
 
         System.out.println(solution.minimumTime(new int[][]{{0, 2, 4}, {3, 2, 1}, {1, 0, 4}})); // -1
+
+        // grid = [[0,1,99],[3,99,99],[4,5,6]]
+        System.out.println(solution.minimumTime(new int[][]{{0, 1, 99}, {3, 99, 99}, {4, 5, 6}})); // 6
     }
 }
