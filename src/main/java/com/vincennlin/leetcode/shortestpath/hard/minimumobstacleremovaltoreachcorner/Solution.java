@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.bfs.hard.minimumobstacleremovaltoreachcorner;
+package com.vincennlin.leetcode.shortestpath.hard.minimumobstacleremovaltoreachcorner;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
