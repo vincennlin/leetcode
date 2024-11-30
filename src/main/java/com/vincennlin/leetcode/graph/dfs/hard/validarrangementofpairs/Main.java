@@ -53,12 +53,21 @@ public class Main {
         Solution solution = new Solution();
 
         int[][] result1 = solution.validArrangement(new int[][]{{5, 1}, {4, 5}, {11, 9}, {9, 4}});
-        System.out.println(Arrays.toString(result1)); // [[11, 9], [9, 4], [4, 5], [5, 1]]
+        for (int[] pair : result1) {
+            System.out.print(Arrays.toString(pair) + " "); // [11, 9] [9, 4] [4, 5] [5, 1]
+        }
+        System.out.println();
 
         int[][] result2 = solution.validArrangement(new int[][]{{1, 3}, {3, 2}, {2, 1}});
-        System.out.println(Arrays.toString(result2)); // [[1, 3], [3, 2], [2, 1]]
+        for (int[] pair : result2) {
+            System.out.print(Arrays.toString(pair) + " "); // [1, 3] [3, 2] [2, 1]
+        }
+        System.out.println();
 
         int[][] result3 = solution.validArrangement(new int[][]{{1, 2}, {1, 3}, {2, 1}});
-        System.out.println(Arrays.toString(result3)); // [[1, 2], [2, 1], [1, 3]]
+        for (int[] pair : result3) {
+            System.out.print(Arrays.toString(pair) + " "); // [1, 2] [2, 1] [1, 3]
+        }
+        System.out.println();
     }
 }
