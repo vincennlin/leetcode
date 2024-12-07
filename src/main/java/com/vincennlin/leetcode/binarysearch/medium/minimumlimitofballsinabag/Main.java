@@ -44,5 +44,8 @@ public class Main {
         System.out.println(solution.minimumSize(new int[]{9}, 2)); // 3
 
         System.out.println(solution.minimumSize(new int[]{2, 4, 8, 2}, 4)); // 2
+
+        // nums = [7, 17], maxOperations = 2
+        System.out.println(solution.minimumSize(new int[]{7, 17}, 2)); // 7
     }
 }
