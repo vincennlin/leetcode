@@ -5,23 +5,31 @@ import java.util.Arrays;
 // 1760
 class Solution {
     public int minimumSize(int[] nums, int maxOperations) {
-        int sum = Arrays.stream(nums).sum();
-        int bagsNum = (nums.length + maxOperations);
-
-        return binarySearch(sum, bagsNum);
-    }
-
-    private int binarySearch(int sum, int bagsNum) {
-        int left = 1, right = sum;
+        int left = 1, right = Arrays.stream(nums).max().getAsInt();
         int mid;
+
         while (left <= right) {
             mid = left + (right - left) / 2;
-            if (mid * bagsNum < sum) {
-                left = mid + 1;
-            } else {
+            if (canDivide(nums, mid, maxOperations)) {
                 right = mid - 1;
+            } else {
+                left = mid + 1;
             }
         }
+
         return left;
+    }
+
+    private boolean canDivide(int[] nums, int maxSize, int maxOperations) {
+        int operations = 0;
+        for (int num : nums) {
+            if (num > maxSize) {
+                operations += (num - 1) / maxSize;
+            }
+            if (operations > maxOperations) {
+                return false;
+            }
+        }
+        return true;
     }
 }
