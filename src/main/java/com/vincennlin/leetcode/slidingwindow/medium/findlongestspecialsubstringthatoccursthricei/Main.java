@@ -43,5 +43,8 @@ public class Main {
         System.out.println(solution.maximumLength("abcdef")); // -1
 
         System.out.println(solution.maximumLength("abcaba")); // 1
+
+        // s = "abcccccdddd"
+        System.out.println(solution.maximumLength("abcccccdddd")); // 3
     }
 }
