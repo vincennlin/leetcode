@@ -45,5 +45,8 @@ public class Main {
         System.out.println(solution.maximumBeauty(new int[]{4, 6, 1, 2}, 2)); // 3
 
         System.out.println(solution.maximumBeauty(new int[]{1, 1, 1, 1}, 10)); // 4
+
+        // nums = [100000], k = 0
+        System.out.println(solution.maximumBeauty(new int[]{100000}, 0)); // 1
     }
 }
