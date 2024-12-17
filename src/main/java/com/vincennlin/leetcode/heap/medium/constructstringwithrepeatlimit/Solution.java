@@ -5,33 +5,35 @@ import java.util.*;
 // 2182
 class Solution {
     public String repeatLimitedString(String s, int repeatLimit) {
-        Queue<Character> maxHeap = new PriorityQueue<>((a, b) -> b - a);
-        int[] chars = new int[26];
-        StringBuilder sb = new StringBuilder();
-
+        Map<Character, Integer> charFreqMap = new HashMap<>();
         for (char c : s.toCharArray()) {
-            if (chars[c - 'a'] == 0) {
-                maxHeap.add(c);
-            }
-            chars[c - 'a']++;
+            charFreqMap.put(c, charFreqMap.getOrDefault(c, 0) + 1);
         }
+
+        Queue<Character> maxHeap = new PriorityQueue<>((a, b) -> b - a);
+        maxHeap.addAll(charFreqMap.keySet());
+
+        StringBuilder sb = new StringBuilder();
 
         while (!maxHeap.isEmpty()) {
             char c = maxHeap.poll();
-            int charIndex = c - 'a';
-            sb.append(c);
-            chars[charIndex]--;
-            while (chars[charIndex]-- > 0) {
-                if (sb.length() > repeatLimit && sb.charAt(sb.length() - repeatLimit) == c) {
-                    if (maxHeap.isEmpty()) {
-                        break;
-                    }
-                    char nextChar = maxHeap.peek();
-                    sb.append(nextChar);
-                    chars[nextChar - 'a']--;
-                } else {
-                    sb.append(c);
+            int freq = charFreqMap.get(c);
+
+            int use = Math.min(freq, repeatLimit);
+            for (int i = 0; i < use; i++) {
+                sb.append(c);
+            }
+
+            charFreqMap.put(c, freq - use);
+
+            if (charFreqMap.get(c) > 0 && !maxHeap.isEmpty()) {
+                char nextChar = maxHeap.poll();
+                sb.append(nextChar);
+                charFreqMap.put(nextChar, charFreqMap.get(nextChar) - 1);
+                if (charFreqMap.get(nextChar) > 0) {
+                    maxHeap.add(nextChar);
                 }
+                maxHeap.add(c);
             }
         }
 
