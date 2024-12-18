@@ -1,15 +1,21 @@
 package com.vincennlin.leetcode.stack.easy.finalpriceswithaspecialdiscountinashop;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 // 1475
 class Solution {
     public int[] finalPrices(int[] prices) {
-        for (int i = 0; i < prices.length - 1; i++) {
-            for (int j = i + 1; j < prices.length; j++) {
-                if (prices[j] <= prices[i]) {
-                    prices[i] -= prices[j];
-                    break;
-                }
+        Deque<Integer> stack = new ArrayDeque<>();
+
+        for (int i = 0; i < prices.length; i++) {
+            int price = prices[i];
+            while (!stack.isEmpty() && price <= prices[stack.peek()]) {
+                prices[stack.pop()] -= price;
             }
+            stack.push(i);
         }
+
         return prices;
     }
 }
