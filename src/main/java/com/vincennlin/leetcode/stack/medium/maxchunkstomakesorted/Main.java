@@ -38,5 +38,8 @@ public class Main {
         System.out.println(solution.maxChunksToSorted(new int[]{4, 3, 2, 1, 0})); // 1
 
         System.out.println(solution.maxChunksToSorted(new int[]{1, 0, 2, 3, 4})); // 4
+
+        // arr = [1, 2, 0, 3, 4]
+        System.out.println(solution.maxChunksToSorted(new int[]{1, 2, 0, 3, 4})); // 3
     }
 }
