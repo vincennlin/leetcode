@@ -2,20 +2,20 @@ package com.vincennlin.leetcode.binarytree.dfs.medium.reverseoddlevelsofbinarytr
 // 2415
 class Solution {
     public TreeNode reverseOddLevels(TreeNode root) {
-        dfs(root, false);
+        dfs(root.left, root.right, 0);
         return root;
     }
 
-    private void dfs(TreeNode root, boolean isNodeOddLevel) {
-        if (root == null) {
+    private void dfs(TreeNode leftChild, TreeNode rightChild, int level) {
+        if (leftChild == null || rightChild == null) {
             return;
         }
-        if (!isNodeOddLevel && root.left != null && root.right != null) {
-            int temp = root.left.val;
-            root.left.val = root.right.val;
-            root.right.val = temp;
+        if (level % 2 == 0) {
+            int temp = leftChild.val;
+            leftChild.val = rightChild.val;
+            rightChild.val = temp;
         }
-        dfs(root.left, !isNodeOddLevel);
-        dfs(root.right, !isNodeOddLevel);
+        dfs(leftChild.left, rightChild.right, level + 1);
+        dfs(leftChild.right, rightChild.left, level + 1);
     }
 }
