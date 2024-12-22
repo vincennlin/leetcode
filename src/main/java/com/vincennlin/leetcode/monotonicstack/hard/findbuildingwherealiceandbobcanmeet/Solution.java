@@ -1,62 +1,84 @@
 package com.vincennlin.leetcode.monotonicstack.hard.findbuildingwherealiceandbobcanmeet;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
+import java.util.*;
 
 // 2940
 class Solution {
     public int[] leftmostBuildingQueries(int[] heights, int[][] queries) {
-        int[] nextTallerIndexes = getTallerIndexes(heights, 0);
+        List<Pair<Integer, Integer>> monoStack = new ArrayList<>();
+        int[] result = new int[queries.length];
+        Arrays.fill(result, -1);
+        List<List<Pair<Integer, Integer>>> newQueries = new ArrayList<>(heights.length);
+
+        for (int i = 0; i < heights.length; i++) {
+            newQueries.add(new ArrayList<>());
+        }
 
         for (int i = 0; i < queries.length; i++) {
-            if (queries[i][0] > queries[i][1]) {
-                int temp = queries[i][0];
-                queries[i][0] = queries[i][1];
-                queries[i][1] = temp;
+            int a = queries[i][0];
+            int b = queries[i][1];
+            if (a > b) {
+                int temp = a;
+                a = b;
+                b = temp;
+            }
+            if (heights[b] > heights[a] || a == b) {
+                result[i] = b;
+            } else {
+                newQueries.get(b).add(new Pair<>(heights[a], i));
             }
         }
 
-        int[] result = new int[queries.length];
-
-        for (int i = 0; i < queries.length; i++) {
-            int[] query = queries[i];
-            if (query[0] == query[1] || heights[query[1]] > heights[query[0]]) {
-                result[i] = query[1];
-            } else {
-                if (nextTallerIndexes[query[0]] == -1 || nextTallerIndexes[query[1]] == -1) {
-                    result[i] = -1;
-                } else if (nextTallerIndexes[query[0]] >= query[1]){
-                    result[i] = nextTallerIndexes[query[0]];
-                } else { // query[0] 的下一個最高樓在 query[1] 之前，必須把 query[1] 的高度當成 query[0] 重新找一次
-                    int temp = heights[query[1]];
-                    heights[query[1]] = heights[query[0]];
-                    result[i] = getTallerIndexes(heights, query[1])[query[1]];
-                    heights[query[1]] = temp;
+        for (int i = heights.length - 1; i >= 0; i--) {
+            int monoStackSize = monoStack.size();
+            for (Pair<Integer, Integer> pair : newQueries.get(i)) {
+                int position = search(pair.getKey(), monoStack);
+                if (position < monoStackSize && position >= 0) {
+                    result[pair.getValue()] = monoStack.get(position).getValue();
                 }
             }
+
+            while (!monoStack.isEmpty() && monoStack.get(monoStack.size() - 1).getKey() <= heights[i]) {
+                monoStack.remove(monoStack.size() - 1);
+            }
+
+            monoStack.add(new Pair<>(heights[i], i));
         }
 
         return result;
     }
 
-    private int[] getTallerIndexes(int[] heights, int start) {
-        int[] nextTallerIndexes = new int[heights.length];
-        Deque<Integer> monoStack = new ArrayDeque<>();
-
-        for (int i = heights.length - 1; i >= start; i--) {
-            int height = heights[i];
-            if (monoStack.isEmpty() || height < heights[monoStack.peek()]) {
-                nextTallerIndexes[i] = monoStack.isEmpty() ? -1 : monoStack.peek();
-                monoStack.push(i);
+    private int search(int height, List<Pair<Integer, Integer>> monoStack) {
+        int left = 0;
+        int right = monoStack.size() - 1;
+        int ans = -1;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (monoStack.get(mid).getKey() > height) {
+                ans = Math.max(ans, mid);
+                left = mid + 1;
             } else {
-                while (!monoStack.isEmpty() && height >= heights[monoStack.peek()]) {
-                    monoStack.pop();
-                }
-                nextTallerIndexes[i] = monoStack.isEmpty() ? -1 : monoStack.peek();
-                monoStack.push(i);
+                right = mid - 1;
             }
         }
+        return ans;
+    }
+}
 
-        return nextTallerIndexes;
+class Pair<K, V> {
+    private K key;
+    private V value;
+
+    public Pair(K key, V value) {
+        this.key = key;
+        this.value = value;
+    }
+
+    public K getKey() {
+        return key;
+    }
+
+    public V getValue() {
+        return value;
     }
 }
