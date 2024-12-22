@@ -55,5 +55,9 @@ public class Main {
 
         int[] result2 = solution.leftmostBuildingQueries(new int[]{5, 3, 8, 2, 6, 1, 4, 6}, new int[][]{{0, 7}, {3, 5}, {5, 2}, {3, 0}, {1, 6}});
         System.out.println(Arrays.toString(result2)); // [7, 6, -1, 4, 6]
+
+        // heights = [3,4,1,2], queries = [[0,0],[0,1],[0,2],[0,3],[1,0],[1,1],[1,2],[1,3],[2,0],[2,1],[2,2],[2,3],[3,0],[3,1],[3,2],[3,3]], expected = [0,1,-1,-1,1,1,-1,-1,-1,-1,2,3,-1,-1,3,3]
+        int[] result3 = solution.leftmostBuildingQueries(new int[]{3, 4, 1, 2}, new int[][]{{0, 0}, {0, 1}, {0, 2}, {0, 3}, {1, 0}, {1, 1}, {1, 2}, {1, 3}, {2, 0}, {2, 1}, {2, 2}, {2, 3}, {3, 0}, {3, 1}, {3, 2}, {3, 3}});
+        System.out.println(Arrays.toString(result3)); // [0, 1, -1, -1, 1, 1, -1, -1, -1, -1, 2, 3, -1, -1, 3, 3]
     }
 }
