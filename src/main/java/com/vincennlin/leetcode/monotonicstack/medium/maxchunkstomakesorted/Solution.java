@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.stack.medium.maxchunkstomakesorted;
+package com.vincennlin.leetcode.monotonicstack.medium.maxchunkstomakesorted;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
