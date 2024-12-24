@@ -8,57 +8,83 @@ import java.util.Queue;
 // 3203
 class Solution {
     public int minimumDiameterAfterMerge(int[][] edges1, int[][] edges2) {
-        int diameter1 = getDiameter(edges1);
-        int diameter2 = getDiameter(edges2);
-        int maxDiameter = Math.max(diameter1, diameter2);
+        int n = edges1.length + 1;
+        int m = edges2.length + 1;
 
-        if (diameter1 == 0 || diameter2 == 0) {
-            return maxDiameter;
-        } else {
-            return Math.max(maxDiameter, diameter1 + diameter2 + 1);
-        }
+        List<Integer>[] adjList1 = buildAdjList(n, edges1);
+        List<Integer>[] adjList2 = buildAdjList(m, edges2);
 
+        int diameter1 = findDiameter(n, adjList1);
+        int diameter2 = findDiameter(m, adjList2);
+
+        int combinedDiameter = (int) Math.ceil(diameter1 / 2.0) + (int) Math.ceil(diameter2 / 2.0) + 1;
+
+        return Math.max(Math.max(diameter1, diameter2), combinedDiameter);
     }
 
-    private int getDiameter(int[][] edges) {
-        if (edges.length < 2) {
-            return edges.length;
+    private List<Integer>[] buildAdjList(int size, int[][] edges) {
+        List<Integer>[] adjList = new List[size];
+        for (int i = 0; i < size; i++) {
+            adjList[i] = new ArrayList<>();
         }
-
-        int m = edges.length + 1;
-        List<Integer>[] graph = new List[m];
-
-        for (int i = 0; i < m; i++) {
-            graph[i] = new ArrayList<>();
-        }
-
         for (int[] edge : edges) {
-            int node1 = edge[0];
-            int node2 = edge[1];
-            graph[node1].add(node2);
-            graph[node2].add(node1);
+            adjList[edge[0]].add(edge[1]);
+            adjList[edge[1]].add(edge[0]);
         }
+        return adjList;
+    }
 
+    private int findDiameter(int n, List<Integer>[] adjList) {
+        Pair firstBFS = findFarthestNode(n, adjList, 0);
+        int farthestNode = firstBFS.getFirst();
+
+        Pair secondBFS = findFarthestNode(n, adjList, farthestNode);
+        return secondBFS.getSecond();
+    }
+
+    private Pair findFarthestNode(int n, List<Integer>[] adjList, int sourceNode) {
         Queue<Integer> queue = new LinkedList<>();
-        queue.add(0);
-        int length = -1;
-        boolean[] visited = new boolean[m];
+        boolean[] visited = new boolean[n];
+        queue.add(sourceNode);
+        visited[sourceNode] = true;
+
+        int maximumDistance = 0, farthestNode = sourceNode;
 
         while (!queue.isEmpty()) {
-            int lengthSize = queue.size();
-            length++;
-            for (int i = 0; i < lengthSize; i++) {
-                int node = queue.poll();
-                for (int neighbor : graph[node]) {
-                    if (visited[neighbor]) {
-                        continue;
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                int currentNode = queue.poll();
+                farthestNode = currentNode;
+
+                for (int neighbor : adjList[currentNode]) {
+                    if (!visited[neighbor]) {
+                        visited[neighbor] = true;
+                        queue.add(neighbor);
                     }
-                    queue.add(neighbor);
                 }
-                visited[node] = true;
+            }
+            if (!queue.isEmpty()) {
+                maximumDistance++;
             }
         }
+        return new Pair(farthestNode, maximumDistance);
+    }
 
-        return length;
+    class Pair {
+        private int first;
+        private int second;
+
+        public Pair(int first, int second) {
+            this.first = first;
+            this.second = second;
+        }
+
+        public int getFirst() {
+            return first;
+        }
+
+        public int getSecond() {
+            return second;
+        }
     }
 }
