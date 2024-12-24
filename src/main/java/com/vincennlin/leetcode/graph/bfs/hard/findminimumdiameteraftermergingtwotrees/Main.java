@@ -52,5 +52,8 @@ public class Main {
         System.out.println(solution.minimumDiameterAfterMerge(new int[][]{{0, 1}, {0, 2}, {0, 3}}, new int[][]{{0, 1}})); // 3
 
         System.out.println(solution.minimumDiameterAfterMerge(new int[][]{{0, 1}, {0, 2}, {0, 3}, {2, 4}, {2, 5}, {3, 6}, {2, 7}}, new int[][]{{0, 1}, {0, 2}, {0, 3}, {2, 4}, {2, 5}, {3, 6}, {2, 7}})); // 5
+
+        // edges1 = [], edges2 = [[0,1],[1,2]]
+        System.out.println(solution.minimumDiameterAfterMerge(new int[][]{}, new int[][]{{0, 1}, {1, 2}})); // 2
     }
 }
