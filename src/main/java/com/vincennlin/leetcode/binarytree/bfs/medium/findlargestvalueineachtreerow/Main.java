@@ -38,8 +38,8 @@ public class Main {
         System.out.println(result1); // [1,3,9]
 
         TreeNode root2 = new TreeNode(1);
-        root1.left = new TreeNode(2);
-        root1.right = new TreeNode(3);
+        root2.left = new TreeNode(2);
+        root2.right = new TreeNode(3);
 
         List<Integer> result2 = solution.largestValues(root2);
         System.out.println(result2); // [1,3]
