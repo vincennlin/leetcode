@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.dynamicprogramming.multidimensional.medium.bestsightseeingpair;
+package com.vincennlin.leetcode.dynamicprogramming.onedimensional.medium.bestsightseeingpair;
 /*
 You are given an integer array values where values[i] represents the value of the ith sightseeing spot. Two sightseeing spots i and j have a distance j - i between them.
 
