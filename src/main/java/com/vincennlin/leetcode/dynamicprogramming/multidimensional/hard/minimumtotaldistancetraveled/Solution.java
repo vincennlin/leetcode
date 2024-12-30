@@ -3,7 +3,7 @@ package com.vincennlin.leetcode.dynamicprogramming.multidimensional.hard.minimum
 import java.util.*;
 
 // 2463
-// not understood
+// TODO
 class Solution {
     public long minimumTotalDistance(List<Integer> robot, int[][] factory) {
         Collections.sort(robot);

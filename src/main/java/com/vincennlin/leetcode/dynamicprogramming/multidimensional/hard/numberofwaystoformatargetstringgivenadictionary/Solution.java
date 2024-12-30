@@ -3,8 +3,8 @@ package com.vincennlin.leetcode.dynamicprogramming.multidimensional.hard.numbero
 import java.util.Arrays;
 
 // 1639
+// TODO
 public class Solution {
-
     public int numWays(String[] words, String target) {
         int wordLength = words[0].length();
         int targetLength = target.length();
