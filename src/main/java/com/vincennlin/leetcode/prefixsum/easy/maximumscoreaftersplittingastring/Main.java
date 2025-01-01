@@ -42,5 +42,8 @@ public class Main {
         System.out.println(solution.maxScore("00111")); // 5
 
         System.out.println(solution.maxScore("1111")); // 3
+
+        // s = "00"
+        System.out.println(solution.maxScore("00")); // 1
     }
 }

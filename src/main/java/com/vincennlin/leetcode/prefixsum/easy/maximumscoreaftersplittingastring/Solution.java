@@ -2,18 +2,26 @@ package com.vincennlin.leetcode.prefixsum.easy.maximumscoreaftersplittingastring
 // 1422
 class Solution {
     public int maxScore(String s) {
-        int[] prefixOnes = new int[s.length()];
-        prefixOnes[0] = s.charAt(0) == 1 ? 1 : 0;
+        int ones = 0;
+        char[] charArray = s.toCharArray();
 
-        for (int i = 1; i < s.length(); i++) {
-            prefixOnes[i] = prefixOnes[i - 1] + (s.charAt(i) == '1' ? 1 : 0);
+        for (char c : charArray) {
+            if (c == '1') {
+                ones++;
+            }
         }
 
-        int ans = 0, zeroCount = 0;
+        int ans = 0, zeros = 0;
 
-        for (int i = 0; i < s.length(); i++) {
-            zeroCount += (s.charAt(i) == '0' ? 1 : 0);
-            ans = Math.max(ans, zeroCount + (prefixOnes[prefixOnes.length - 1] - prefixOnes[i]));
+        for (int i = 0; i < s.length() - 1; i++) {
+            char c = s.charAt(i);
+            if (c == '1') {
+                ones--;
+            } else {
+                zeros++;
+            }
+
+            ans = Math.max(ans, zeros + ones);
         }
 
         return ans;
