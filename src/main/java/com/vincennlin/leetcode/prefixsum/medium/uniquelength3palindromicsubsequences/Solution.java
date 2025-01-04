@@ -1,33 +1,38 @@
 package com.vincennlin.leetcode.prefixsum.medium.uniquelength3palindromicsubsequences;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 // 1930
 class Solution {
     public int countPalindromicSubsequence(String s) {
-        Set<Character> leftSet = new HashSet<>();
-        Map<Character, Integer> rightMap = new HashMap<>();
+        int[] leftIndexes = new int[26];
+        int[] rightIndexes = new int[26];
+        Arrays.fill(leftIndexes, -1);
 
         for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            leftSet.add(c);
-            rightMap.put(c, i);
+            int charIndex = s.charAt(i) - 'a';
+            if (leftIndexes[charIndex] == -1) {
+                leftIndexes[charIndex] = i;
+            }
+            rightIndexes[charIndex] = i;
         }
 
         int answer = 0;
 
         for (int left = 0; left < s.length(); left++) {
-            char c = s.charAt(left);
-            if (leftSet.contains(c)) {
-                int right = rightMap.get(c);
-                if (right - left > 1) {
-                    answer += getLength3PalindromeCount(left + 1, right - 1, s);
-                }
-                leftSet.remove(c);
+            int charIndex = s.charAt(left) - 'a';
+
+            if (leftIndexes[charIndex] == -1) {
+                continue;
             }
+
+            int right = rightIndexes[charIndex];
+
+            if (right - left > 1) {
+                answer += getLength3PalindromeCount(left + 1, right - 1, s);
+            }
+
+            leftIndexes[charIndex] = -1;
         }
 
         return answer;
