@@ -2,23 +2,20 @@ package com.vincennlin.leetcode.prefixsum.medium.shiftinglettersii;
 // 2381
 class Solution {
     public String shiftingLetters(String s, int[][] shifts) {
-        int[] shiftSums = new int[s.length()];
+        int[] shiftedSums = new int[s.length()];
 
         for (int[] shift : shifts) {
-            int start = shift[0];
-            int end = shift[1];
-            int direction = shift[2];
-
-            for (int i = start; i <= end; i++) {
-                shiftSums[i] += direction == 1 ? 1 : -1;
+            for (int i = shift[0]; i <= shift[1]; i++) {
+                shiftedSums[i] += shift[2] == 1 ? 1 : -1;
             }
         }
 
         StringBuilder sb = new StringBuilder();
 
-        for (int i = 0; i < shiftSums.length; i++) {
-            int charIndex = ((s.charAt(i) + shiftSums[i] - 'a') + 26 * (10 ^ 4)) % 26;
-            sb.append((char) ('a' + charIndex));
+        for (int i = 0; i < shiftedSums.length; i++) {
+            shiftedSums[i] = (shiftedSums[i] % 26 + 26);
+            int shiftedIndex = (s.charAt(i) - 'a' + shiftedSums[i]) % 26;
+            sb.append((char) ('a' + shiftedIndex));
         }
 
         return sb.toString();
