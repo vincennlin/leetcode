@@ -1,4 +1,7 @@
 package com.vincennlin.leetcode.prefixsum.medium.shiftinglettersii;
+
+import java.sql.SQLOutput;
+
 /*
 You are given a string s of lowercase English letters and a 2D integer array shifts where shifts[i] = [starti, endi, directioni]. For every i, shift the characters in s from the index starti to the index endi (inclusive) forward if directioni = 1, or shift the characters backward if directioni = 0.
 
