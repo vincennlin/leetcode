@@ -35,7 +35,7 @@ public class Main {
     public static void main(String[] args) {
         Solution solution = new Solution();
 
-        System.out.println(solution.stringMatching(new String[]{"ababaca", "ababbbcabdababaca"}));
+//        System.out.println(solution.stringMatching(new String[]{"ababaca", "ababbbcabdababaca"}));
 
         System.out.println(solution.stringMatching(new String[] {"mass", "as", "hero", "superhero"})); // ["as","hero"]
 
