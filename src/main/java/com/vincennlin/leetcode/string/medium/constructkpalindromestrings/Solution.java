@@ -10,16 +10,18 @@ class Solution {
             return true;
         }
 
-        boolean[] isOdd = new boolean[26];
-        int oddCount = 0;
+        int[] freq = new int[26];
 
         for (char c : s.toCharArray()) {
-            if (isOdd[c - 'a']) {
-                oddCount--;
-            } else {
+            freq[c - 'a']++;
+        }
+
+        int oddCount = 0;
+
+        for (int f : freq) {
+            if (f % 2 == 1) {
                 oddCount++;
             }
-            isOdd[c - 'a'] = !isOdd[c - 'a'];
         }
 
         return oddCount <= k;
