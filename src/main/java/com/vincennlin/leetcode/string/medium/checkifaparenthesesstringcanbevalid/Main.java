@@ -42,5 +42,11 @@ public class Main {
         System.out.println(solution.canBeValid("()()", "0000")); // true
 
         System.out.println(solution.canBeValid(")", "0")); // false
+
+        // s = ")(", locked = "00"
+        System.out.println(solution.canBeValid(")(", "00")); // true
+
+        // s = "())()))()(()(((())(()()))))((((()())(())", locked = "1011101100010001001011000000110010100101"
+        System.out.println(solution.canBeValid("())()))()(()(((())(()()))))((((()())(())", "1011101100010001001011000000110010100101")); // true
     }
 }
