@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.string.medium.checkifaparenthesesstringcanbevalid;
+package com.vincennlin.leetcode.stack.medium.checkifaparenthesesstringcanbevalid;
 /*
 A parentheses string is a non-empty string consisting only of '(' and ')'. It is valid if any of the following conditions is true:
 

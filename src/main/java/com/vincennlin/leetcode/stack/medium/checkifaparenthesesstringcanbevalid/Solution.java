@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.string.medium.checkifaparenthesesstringcanbevalid;
+package com.vincennlin.leetcode.stack.medium.checkifaparenthesesstringcanbevalid;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
