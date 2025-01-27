@@ -52,5 +52,11 @@ public class Main {
         System.out.println(solution.checkIfPrerequisite(2, new int[][]{}, new int[][]{{1, 0}, {0, 1}})); // [false,false]
 
         System.out.println(solution.checkIfPrerequisite(3, new int[][]{{1, 2}, {1, 0}, {2, 0}}, new int[][]{{1, 0}, {1, 2}})); // [true,true]
+
+        // numCourses = 5, prerequisites = [[0,1],[1,2],[2,3],[3,4]], queries = [[0,4],[4,0],[1,3],[3,0]]
+        System.out.println(solution.checkIfPrerequisite(5, new int[][]{{0, 1}, {1, 2}, {2, 3}, {3, 4}}, new int[][]{{0, 4}, {4, 0}, {1, 3}, {3, 0}})); // [true,false,true,false]
+
+        // numCourses = 5, prerequisites = [[3,4],[2,3],[1,2],[0,1]], queries = [[0,4],[4,0],[1,3],[3,0]]
+        System.out.println(solution.checkIfPrerequisite(5, new int[][]{{3, 4}, {2, 3}, {1, 2}, {0, 1}}, new int[][]{{0, 4}, {4, 0}, {1, 3}, {3, 0}})); // [true,false,true,false]
     }
 }
