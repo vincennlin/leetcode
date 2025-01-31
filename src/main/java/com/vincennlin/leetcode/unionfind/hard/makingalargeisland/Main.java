@@ -36,10 +36,14 @@ public class Main {
     public static void main(String[] args) {
         Solution solution = new Solution();
 
+        // [[0,0,1,0],[0,0,1,1],[0,1,0,0],[1,1,0,0]]
+        System.out.println(solution.largestIsland(new int[][]{{0, 0, 1, 0}, {0, 0, 1, 1}, {0, 1, 0, 0}, {1, 1, 0, 0}})); // 7
+
+        System.out.println(solution.largestIsland(new int[][]{{1, 1}, {1, 1}})); // 4
+
         System.out.println(solution.largestIsland(new int[][]{{1, 0}, {0, 1}})); // 3
 
         System.out.println(solution.largestIsland(new int[][]{{1, 1}, {1, 0}})); // 4
 
-        System.out.println(solution.largestIsland(new int[][]{{1, 1}, {1, 1}})); // 4
     }
 }
