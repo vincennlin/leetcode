@@ -61,5 +61,9 @@ public class Main {
 
         int[] result2 = solution.queryResults(4, new int[][]{{0, 1}, {1, 2}, {2, 2}, {3, 4}, {4, 5}});
         System.out.println(Arrays.toString(result2)); // [1,2,2,3,4]
+
+        // limit = 1, queries = [[0,4],[0,4],[1,4],[1,2],[1,1]]
+        int[] result3 = solution.queryResults(1, new int[][]{{0, 4}, {0, 4}, {1, 4}, {1, 2}, {1, 1}});
+        System.out.println(Arrays.toString(result3)); // [1,1,1,2,2]
     }
 }
