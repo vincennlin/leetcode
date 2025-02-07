@@ -6,7 +6,7 @@ import java.util.Map;
 // 3160
 class Solution {
     public int[] queryResults(int limit, int[][] queries) {
-        int[] ballColors = new int[limit + 1];
+        Map<Integer, Integer> ballColorMap = new HashMap<>();
         Map<Integer, Integer> colorCountMap = new HashMap<>();
         int[] result = new int[queries.length];
 
@@ -15,8 +15,8 @@ class Solution {
             int ball = query[0];
             int color = query[1];
 
-            if (ballColors[ball] != 0) {
-                int prevColor = ballColors[ball];
+            if (ballColorMap.containsKey(ball)) {
+                int prevColor = ballColorMap.get(ball);
                 colorCountMap.put(prevColor, colorCountMap.get(prevColor) - 1);
 
                 if (colorCountMap.get(prevColor) == 0) {
@@ -24,7 +24,7 @@ class Solution {
                 }
             }
 
-            ballColors[ball] = color;
+            ballColorMap.put(ball, color);
             colorCountMap.put(color, colorCountMap.getOrDefault(color, 0) + 1);
 
             result[i] = colorCountMap.keySet().size();
