@@ -1,40 +1,37 @@
 package com.vincennlin.leetcode.design.medium.designanumbercontainersystem;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 
 // 2349
 class NumberContainers {
 
     Map<Integer, Integer> indexNumberMap;
-    Map<Integer, Queue<Integer>> numberIndexQueueMap;
+    Map<Integer, TreeSet<Integer>> numberTreeSetMap;
 
     public NumberContainers() {
         indexNumberMap = new HashMap<>();
-        numberIndexQueueMap = new HashMap<>();
+        numberTreeSetMap = new HashMap<>();
     }
 
     public void change(int index, int number) {
         if (indexNumberMap.containsKey(index)) {
             int prevNumber = indexNumberMap.get(index);
-            numberIndexQueueMap.get(prevNumber).remove(index);
-            if (numberIndexQueueMap.get(prevNumber).isEmpty()) {
-                numberIndexQueueMap.remove(prevNumber);
+            numberTreeSetMap.get(prevNumber).remove(index);
+            if (numberTreeSetMap.get(prevNumber).isEmpty()) {
+                numberTreeSetMap.remove(prevNumber);
             }
         }
 
         indexNumberMap.put(index, number);
 
-        if (!numberIndexQueueMap.containsKey(number)) {
-            numberIndexQueueMap.put(number, new PriorityQueue<>());
+        if (!numberTreeSetMap.containsKey(number)) {
+            numberTreeSetMap.put(number, new TreeSet<>());
         }
-        numberIndexQueueMap.get(number).add(index);
+        numberTreeSetMap.get(number).add(index);
     }
 
     public int find(int number) {
-        Queue<Integer> queue = numberIndexQueueMap.get(number);
-        return (queue == null || queue.peek() == null) ? -1 : queue.peek();
+        TreeSet<Integer> treeSet = numberTreeSetMap.get(number);
+        return (treeSet == null || treeSet.isEmpty()) ? -1 : treeSet.first();
     }
 }
