@@ -1,28 +1,23 @@
 package com.vincennlin.leetcode.hashtable.medium.maxsumofapairwithequalsumofdigits;
 
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.PriorityQueue;
 
 // 2342
 class Solution {
     public int maximumSum(int[] nums) {
-        Map<Integer, PriorityQueue<Integer>> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
+
+        int result = -1;
 
         for (int num : nums) {
             int digitsSum = digitsSum(num);
             if (!map.containsKey(digitsSum)) {
-                map.put(digitsSum, new PriorityQueue<>(Comparator.reverseOrder()));
+                map.put(digitsSum, num);
+            } else {
+                result = Math.max(result, map.get(digitsSum) + num);
+                map.put(digitsSum, Math.max(map.get(digitsSum), num));
             }
-            map.get(digitsSum).add(num);
-        }
-
-        int result = -1;
-
-        for (PriorityQueue<Integer> heap : map.values()) {
-            if (heap == null || heap.size() < 2) continue;
-            result = Math.max(result, heap.poll() + heap.poll());
         }
 
         return result;
