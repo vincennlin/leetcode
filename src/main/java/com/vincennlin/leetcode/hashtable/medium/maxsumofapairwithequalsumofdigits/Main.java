@@ -33,5 +33,8 @@ public class Main {
         System.out.println(solution.maximumSum(new int[] {18, 43, 36, 13, 7})); // 54
 
         System.out.println(solution.maximumSum(new int[] {10, 12, 19, 14})); // -1
+
+        // nums = [229,398,269,317,420,464,491,218,439,153,482,169,411,93,147,50,347,210,251,366,401]
+        System.out.println(solution.maximumSum(new int[] {229, 398, 269, 317, 420, 464, 491, 218, 439, 153, 482, 169, 411, 93, 147, 50, 347, 210, 251, 366, 401})); // 973
     }
 }
