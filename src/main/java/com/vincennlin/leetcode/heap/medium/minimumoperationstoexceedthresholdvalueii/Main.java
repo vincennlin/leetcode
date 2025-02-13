@@ -47,5 +47,8 @@ public class Main {
         System.out.println(solution.minOperations(new int[] {2, 11, 10, 1, 3}, 10)); // 2
 
         System.out.println(solution.minOperations(new int[] {1, 1, 2, 4, 9}, 20)); // 4
+
+        // nums = [1000000000,999999999,1000000000,999999999,1000000000,999999999], k = 1000000000
+        System.out.println(solution.minOperations(new int[] {1000000000, 999999999, 1000000000, 999999999, 1000000000, 999999999}, 1000000000)); // 2
     }
 }
