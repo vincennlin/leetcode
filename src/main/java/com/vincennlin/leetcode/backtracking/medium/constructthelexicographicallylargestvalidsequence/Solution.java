@@ -1,6 +1,5 @@
 package com.vincennlin.leetcode.backtracking.medium.constructthelexicographicallylargestvalidsequence;
 
-import java.util.ArrayList;
 import java.util.List;
 
 // 1718
@@ -8,45 +7,48 @@ class Solution {
     public int[] constructDistancedSequence(int n) {
         int[] result = new int[2 * n - 1];
 
-        List<Integer> tempList = new ArrayList<>();
-        tempList.add(n);
+        boolean[] isNumberUsed = new boolean[n];
 
-        int[] freq = new int[n];
-        freq[n - 1]++;
-
-        backtracking(tempList, freq, n);
-
-        for (int i = 0; i < result.length; i++) {
-            result[i] = tempList.get(i);
-        }
+        backtracking(0, result, isNumberUsed, n);
 
         return result;
     }
 
-    private void backtracking(List<Integer> tempList, int[] freq, int n) {
-        for (int nextNum = n; nextNum >= 1; nextNum--) {
-            tempList.add(nextNum);
-            freq[nextNum - 1]++;
-            if (isValid(tempList, freq)) {
-                backtracking(tempList, freq, n);
-                if (tempList.size() == 2 * n - 1) {
-                    return;
-                }
+    private boolean backtracking(int index, int[] result, boolean[] isNumberUsed, int n) {
+        if (index == result.length) {
+            return true;
+        }
+
+        if (result[index] != 0) {
+            return backtracking(index + 1, result, isNumberUsed, n);
+        }
+
+        for (int next = n; next >= 1; next--) {
+            if (isNumberUsed[next - 1]) {
+                continue;
             }
-            tempList.remove(tempList.size() - 1);
-            freq[nextNum - 1]--;
-        }
-    }
 
-    private boolean isValid(List<Integer> tempList, int[] freq) {
-        int lastNum = tempList.get(tempList.size() - 1);
+            isNumberUsed[next - 1] = true;
+            result[index] = next;
 
-        if (lastNum == 1) {
-            return freq[0] == 1;
-        } else {
-            int size = tempList.size();
-            return freq[lastNum - 1] == 1 ||
-                    (freq[lastNum - 1] == 2 && size > lastNum && tempList.get(size - 1 - lastNum) == lastNum);
+            if (next == 1) {
+                if (backtracking(index + 1, result, isNumberUsed, n)) {
+                    return true;
+                }
+            } else if (index + next < result.length && result[index + next] == 0) {
+                result[index + next] = next;
+
+                if (backtracking(index + 1, result, isNumberUsed, n)) {
+                    return true;
+                }
+
+                result[index + next] = 0;
+            }
+
+            isNumberUsed[next - 1] = false;
+            result[index] = 0;
         }
+
+        return false;
     }
 }

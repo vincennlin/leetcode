@@ -41,5 +41,8 @@ public class Main {
 
         int[] result2 = solution.constructDistancedSequence(5);
         System.out.println(Arrays.toString(result2));
+
+        int[] result3 = solution.constructDistancedSequence(11);
+        System.out.println(Arrays.toString(result3));
     }
 }
