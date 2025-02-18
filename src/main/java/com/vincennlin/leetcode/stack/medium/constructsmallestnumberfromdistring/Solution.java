@@ -1,51 +1,26 @@
 package com.vincennlin.leetcode.stack.medium.constructsmallestnumberfromdistring;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.LinkedList;
+
 // 2375
 class Solution {
     public String smallestNumber(String pattern) {
-        char[] chars = pattern.toCharArray();
-
-        int[] ds = countDs(chars);
-
         StringBuilder sb = new StringBuilder();
-        boolean[] seen = new boolean[9];
-        int smallest = 1;
-        seen[0] = true;
+        Deque<Integer> stack = new LinkedList<>();
+        int num = 1;
 
-        for (int i = 0; i < chars.length; i++) {
-            if (chars[i] == 'I') {
-                sb.append(smallest);
+        for (int i = 0; i <= pattern.length(); i++) {
+            stack.push(num++);
 
-                do {
-                    smallest++;
-                } while (seen[smallest]);
-
-                seen[smallest] = true;
-            } else {
-                sb.append(smallest + ds[i]);
-                seen[smallest + ds[i] - 1] = true;
+            if (i == pattern.length() || pattern.charAt(i) == 'I') {
+                while (!stack.isEmpty()) {
+                    sb.append(stack.pop());
+                }
             }
         }
-
-        sb.append(smallest);
 
         return sb.toString();
-    }
-
-    private int[] countDs(char[] chars) {
-        int[] ds = new int[chars.length + 1];
-        int count = 0;
-
-        for (int i = chars.length - 1; i >= 0; i--) {
-            ds[i + 1] = count;
-            if (chars[i] == 'D') {
-                count++;
-            } else {
-                count = 0;
-            }
-        }
-
-        ds[0] = count;
-
-        return ds;
     }
 }
