@@ -36,7 +36,7 @@ Constraints:
  */
 public class Main {
     public static void main(String[] args) {
-Solution solution = new Solution();
+        Solution solution = new Solution();
 
         System.out.println(solution.getHappyString(1, 3)); // c
 
