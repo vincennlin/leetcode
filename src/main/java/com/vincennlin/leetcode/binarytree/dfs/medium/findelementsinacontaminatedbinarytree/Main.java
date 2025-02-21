@@ -71,6 +71,8 @@ public class Main {
         System.out.println(findElements1.find(1)); // false
         System.out.println(findElements1.find(2)); // true
 
+        System.out.println();
+
         TreeNode root2 = new TreeNode(-1);
         root2.left = new TreeNode(-1);
         root2.right = new TreeNode(-1);
@@ -80,6 +82,8 @@ public class Main {
         System.out.println(findElements2.find(1)); // true
         System.out.println(findElements2.find(3)); // true
         System.out.println(findElements2.find(5)); // false
+
+        System.out.println();
 
         TreeNode root3 = new TreeNode(-1);
         root3.right = new TreeNode(-1);
