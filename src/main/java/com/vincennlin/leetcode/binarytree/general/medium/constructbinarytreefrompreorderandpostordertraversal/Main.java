@@ -53,6 +53,13 @@ public class Main {
         TreeNode root3 = solution.constructFromPrePost(preorder3, postorder3);
         printInOrder(root3);
         System.out.println();
+
+        // preorder = [2,1,3], postorder = [3,1,2]
+        int[] preorder4 = {2, 1, 3};
+        int[] postorder4 = {3, 1, 2};
+        TreeNode root4 = solution.constructFromPrePost(preorder4, postorder4);
+        printInOrder(root4);
+        System.out.println();
     }
 
     public static void printInOrder(TreeNode root) {
