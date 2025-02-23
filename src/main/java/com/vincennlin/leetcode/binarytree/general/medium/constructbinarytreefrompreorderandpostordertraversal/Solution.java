@@ -3,39 +3,37 @@ package com.vincennlin.leetcode.binarytree.general.medium.constructbinarytreefro
 class Solution {
 
     public TreeNode constructFromPrePost(int[] preorder, int[] postorder) {
-        int[] preorderIndexMap = new int[preorder.length];
-        int[] postorderIndexMap = new int[postorder.length];
+        int[] postorderIndexMap = new int[postorder.length + 1];
 
         for (int i = 0; i < preorder.length; i++) {
-            preorderIndexMap[preorder[i] - 1] = i;
-            postorderIndexMap[postorder[i] - 1] = i;
+            postorderIndexMap[postorder[i]] = i;
         }
 
-        return buildTree(preorder, postorder, preorderIndexMap, postorderIndexMap,
-                0, preorder.length - 1, 0, postorder.length - 1);
+        return buildTree(preorder, postorderIndexMap,
+                0, preorder.length - 1, 0);
     }
 
-    private TreeNode buildTree(int[] preorder, int[] postorder, int[] preorderIndexMap, int[] postorderIndexMap,
-                               int preStart, int preEnd, int postStart, int postEnd) {
-        if (preStart > preEnd && postStart > postEnd) {
+    private TreeNode buildTree(int[] preorder, int[] postorderIndexMap,
+                               int preStart, int preEnd, int postStart) {
+        if (preStart > preEnd) {
             return null;
         }
 
         TreeNode root = new TreeNode(preorder[preStart]);
 
-        if (preStart < preEnd && postStart < postEnd) {
-
-            int leftVal = preorder[preStart + 1];
-            int rightVal = postorder[postEnd - 1];
-
-            root.left = buildTree(preorder, postorder, preorderIndexMap, postorderIndexMap,
-                    preStart + 1, preorderIndexMap[rightVal - 1] - 1, postStart, postorderIndexMap[leftVal - 1]);
-
-            if (leftVal != rightVal) {
-                root.right = buildTree(preorder, postorder, preorderIndexMap, postorderIndexMap,
-                        preorderIndexMap[rightVal - 1], preEnd, postorderIndexMap[leftVal - 1] + 1, postEnd - 1);
-            }
+        if (preStart == preEnd) {
+            return root;
         }
+
+        int leftVal = preorder[preStart + 1];
+
+        int nodesInLeft = postorderIndexMap[leftVal] - postStart + 1;
+
+        root.left = buildTree(preorder, postorderIndexMap,
+                preStart + 1, preStart + nodesInLeft, postStart);
+
+        root.right = buildTree(preorder, postorderIndexMap,
+                preStart + nodesInLeft + 1, preEnd, postStart + nodesInLeft);
 
         return root;
     }
