@@ -9,8 +9,8 @@ class Solution {
     public int mostProfitablePath(int[][] edges, int bob, int[] amount) {
         maxIncome = Integer.MIN_VALUE;
         int nodes = edges.length + 1;
-        boolean[] visitedByBob = new boolean[nodes];
-        List<Integer> timestampsByBob = new ArrayList<>();
+        boolean[] visited = new boolean[nodes];
+        Map<Integer, Integer> pathTimeByBob = new HashMap<>();
         List<List<Integer>> neighbors = new ArrayList<>();
 
         for (int i = 0; i < nodes; i++) {
@@ -22,61 +22,52 @@ class Solution {
             neighbors.get(edge[1]).add(edge[0]);
         }
 
-        dfsByBob(neighbors, visitedByBob, timestampsByBob, bob);
+        findBobPath(neighbors, visited, pathTimeByBob, 0, bob);
 
-        boolean[] visitedByAlice = new boolean[nodes];
-        Arrays.fill(visitedByBob, false);
+        Arrays.fill(visited, false);
 
-        dfsByAlice(neighbors, visitedByAlice, visitedByBob, timestampsByBob, 0, 0, amount, 0);
+        findAlicePath(neighbors, visited, pathTimeByBob, 0, amount, 0, 0);
 
         return maxIncome;
     }
 
-    private void dfsByAlice(List<List<Integer>> neighbors, boolean[] visitedByAlice, boolean[] visitedByBob,
-                            List<Integer> timestampsByBob, int timestamp, int alice, int[] amount, int income) {
-        if (timestamp < timestampsByBob.size()) {
-            visitedByBob[timestampsByBob.get(timestamp)] = true;
-        }
-        visitedByAlice[alice] = true;
+    private void findAlicePath(List<List<Integer>> neighbors, boolean[] visited, Map<Integer, Integer> pathTimeByBob,
+                               int time, int[] amount, int income, int node) {
+        visited[node] = true;
 
-        if (!visitedByBob[alice]) {
-            income += amount[alice];
-        } else if (timestampsByBob.get(timestamp) == alice) {
-            income += amount[alice] / 2;
+        if (!pathTimeByBob.containsKey(node) || time < pathTimeByBob.get(node)) {
+            income += amount[node];
+        } else if (time == pathTimeByBob.get(node)) {
+            income += amount[node] / 2;
         }
 
-        if (alice != 0 && neighbors.get(alice).size() == 1) {
+        if (node != 0 && neighbors.get(node).size() == 1) {
             maxIncome = Math.max(maxIncome, income);
         }
 
-        for (int neighbor : neighbors.get(alice)) {
-            if (!visitedByAlice[neighbor]) {
-                dfsByAlice(neighbors, visitedByAlice, visitedByBob, timestampsByBob, timestamp + 1, neighbor, amount, income);
-                visitedByAlice[neighbor] = false;
-                if (timestamp + 1< timestampsByBob.size()) {
-                    visitedByBob[timestampsByBob.get(timestamp + 1)] = false;
-                }
+        for (int neighbor : neighbors.get(node)) {
+            if (!visited[neighbor]) {
+                findAlicePath(neighbors, visited, pathTimeByBob, time + 1, amount, income, neighbor);
             }
         }
     }
 
-    private void dfsByBob(List<List<Integer>> neighbors, boolean[] visited, List<Integer> timestampsByBob, int bob) {
-        visited[bob] = true;
-        timestampsByBob.add(bob);
+    private boolean findBobPath(List<List<Integer>> neighbors, boolean[] visited, Map<Integer, Integer> pathTimeByBob, int time, int node) {
+        pathTimeByBob.put(node, time);
+        visited[node] = true;
 
-        if (bob == 0) {
-            return;
+        if (node == 0) {
+            return true;
         }
 
-        for (int neighbor : neighbors.get(bob)) {
-            if (!visited[neighbor]) {
-                dfsByBob(neighbors, visited, timestampsByBob, neighbor);
-                if (timestampsByBob.get(timestampsByBob.size() - 1) == 0) {
-                    return;
-                }
-                visited[bob] = false;
-                timestampsByBob.remove(timestampsByBob.size() - 1);
+        for (int neighbor : neighbors.get(node)) {
+            if (!visited[neighbor] && findBobPath(neighbors, visited, pathTimeByBob, time + 1, neighbor)) {
+                return true;
             }
         }
+
+        pathTimeByBob.remove(node);
+
+        return false;
     }
 }
