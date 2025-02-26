@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.dynamicprogramming.onedimensional.medium.maximumabsolutesumofanysubarray;
+package com.vincennlin.leetcode.kadanesalgorithm.maximumabsolutesumofanysubarray;
 /*
 You are given an integer array nums. The absolute sum of a subarray [numsl, numsl+1, ..., numsr-1, numsr] is abs(numsl + numsl+1 + ... + numsr-1 + numsr).
 
