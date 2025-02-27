@@ -1,4 +1,4 @@
-package com.vincennlin.leetcode.hashtable.medium.lengthoflongestfibonaccisubsequence;
+package com.vincennlin.leetcode.dynamicprogramming.multidimensional.medium.lengthoflongestfibonaccisubsequence;
 /*
 A sequence x1, x2, ..., xn is Fibonacci-like if:
 
