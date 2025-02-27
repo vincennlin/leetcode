@@ -36,5 +36,9 @@ public class Main {
 
         int result2 = solution.lenLongestFibSubseq(new int[]{1, 3, 7, 11, 12, 14, 18});
         System.out.println(result2); // 3
+
+        // arr = [2,4,7,8,9,10,14,15,18,23,32,50]
+        int result3 = solution.lenLongestFibSubseq(new int[]{2, 4, 7, 8, 9, 10, 14, 15, 18, 23, 32, 50});
+        System.out.println(result3); // 5
     }
 }
