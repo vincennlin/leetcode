@@ -32,5 +32,8 @@ public class Main {
         System.out.println(solution.shortestCommonSupersequence("abac", "cab")); // "cabac"
 
         System.out.println(solution.shortestCommonSupersequence("aaaaaaaa", "aaaaaaaa")); // "aaaaaaaa"
+
+        // str1 = "bcacaaab", str2 = "bbabaccc"
+        System.out.println(solution.shortestCommonSupersequence("bcacaaab", "bbabaccc")); // "bbabcacccaaab"
     }
 }
