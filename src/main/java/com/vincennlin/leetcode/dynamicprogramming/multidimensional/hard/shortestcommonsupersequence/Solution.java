@@ -2,6 +2,30 @@ package com.vincennlin.leetcode.dynamicprogramming.multidimensional.hard.shortes
 // 1092
 class Solution {
     public String shortestCommonSupersequence(String str1, String str2) {
-        return "";
+        int longest = getLcs(str1, str2);
+
+        if (str1.substring(0, longest).equals(str2.substring(str2.length() - longest))) {
+            return str2.concat(str1.substring(longest));
+        } else {
+            return str1.concat(str2.substring(longest));
+        }
+    }
+
+    private int getLcs(String str1, String str2) {
+        int m = str1.length();
+        int n = str2.length();
+        int[][] dp = new int[m + 1][n + 1];
+
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (str1.charAt(i - 1) == str2.charAt(j - 1)) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+                } else {
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+                }
+            }
+        }
+
+        return dp[m][n];
     }
 }
