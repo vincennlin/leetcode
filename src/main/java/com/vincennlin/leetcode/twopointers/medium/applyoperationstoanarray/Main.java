@@ -49,5 +49,9 @@ public class Main {
 
         int[] result2 = solution.applyOperations(new int[]{0, 1});
         System.out.println(Arrays.toString(result2)); // [1, 0]
+
+        // nums = [847,847,0,0,0,399,416,416,879,879,206,206,206,272]
+        int[] result3 = solution.applyOperations(new int[]{847, 847, 0, 0, 0, 399, 416, 416, 879, 879, 206, 206, 206, 272});
+        System.out.println(Arrays.toString(result3)); // [1694,399,832,1758,412,206,272,0,0,0,0,0,0,0]
     }
 }
