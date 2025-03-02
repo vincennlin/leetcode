@@ -1,35 +1,41 @@
 package com.vincennlin.leetcode.twopointers.easy.mergetwo2darraysbysummingvalues;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 // 2570
 class Solution {
     public int[][] mergeArrays(int[][] nums1, int[][] nums2) {
-        Map<Integer, Integer> numSumMap = new HashMap<>();
+        int left = 0, right = 0;
 
-        for (int[] pair : nums1) {
-            numSumMap.put(pair[0], pair[1]);
-        }
+        List<int[]> list = new ArrayList<>();
 
-        for (int[] pair : nums2) {
-            numSumMap.put(pair[0], numSumMap.getOrDefault(pair[0], 0) + pair[1]);
-        }
+        while (left < nums1.length && right < nums2.length) {
+            int[] indexSumPair;
 
-        int[][] result = new int[numSumMap.size()][2];
-        int index = 0;
-
-        for (int i = 1; i <= 1000; i++) {
-            if (numSumMap.isEmpty()) {
-                break;
+            if (nums1[left][0] == nums2[right][0]) {
+                indexSumPair = new int[2];
+                indexSumPair[0] = nums1[left][0];
+                indexSumPair[1] = nums1[left][1] + nums2[right][1];
+                left++;
+                right++;
+            } else if (nums1[left][0] < nums2[right][0]) {
+                indexSumPair = nums1[left++];
+            } else {
+                indexSumPair = nums2[right++];
             }
 
-            if (numSumMap.containsKey(i)) {
-                result[index++] = new int[]{i, numSumMap.get(i)};
-                numSumMap.remove(i);
-            }
+            list.add(indexSumPair);
         }
 
-        return result;
+        while (left < nums1.length) {
+            list.add(nums1[left++]);
+        }
+
+        while (right < nums2.length) {
+            list.add(nums2[right++]);
+        }
+
+        return list.toArray(new int[][]{});
     }
 }
