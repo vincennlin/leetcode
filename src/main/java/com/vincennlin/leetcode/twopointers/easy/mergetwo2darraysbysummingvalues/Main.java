@@ -46,9 +46,17 @@ public class Main {
         Solution solution = new Solution();
 
         int[][] result1 = solution.mergeArrays(new int[][]{{1, 2}, {2, 3}, {4, 5}}, new int[][]{{1, 4}, {3, 2}, {4, 1}});
-        System.out.println(Arrays.toString(result1)); // [[1, 6], [2, 3], [3, 2], [4, 6]]
+        printArray(result1); // [[1, 6], [2, 3], [3, 2], [4, 6]]
+        System.out.println();
 
         int[][] result2 = solution.mergeArrays(new int[][]{{2, 4}, {3, 6}, {5, 5}}, new int[][]{{1, 3}, {4, 3}});
-        System.out.println(Arrays.toString(result2)); // [[1, 3], [2, 4], [3, 6], [4, 3], [5, 5]]
+        printArray(result2); // [[1, 3], [2, 4], [3, 6], [4, 3], [5, 5]]
+        System.out.println();
+    }
+
+    private static void printArray(int[][] result) {
+        for (int[] pair : result) {
+            System.out.print(Arrays.toString(pair) + ", ");
+        }
     }
 }
