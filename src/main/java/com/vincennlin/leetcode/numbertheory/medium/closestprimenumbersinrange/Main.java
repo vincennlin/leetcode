@@ -39,5 +39,9 @@ public class Main {
 
         int[] result2 = solution.closestPrimes(4, 6);
         System.out.println(Arrays.toString(result2)); // [-1, -1]
+
+        // left = 19, right = 31
+        int[] result3 = solution.closestPrimes(19, 31);
+        System.out.println(Arrays.toString(result3)); // [23, 29]
     }
 }
