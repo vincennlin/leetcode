@@ -42,5 +42,8 @@ public class Main {
         System.out.println(solution.minimumRecolors("WBBWWBBWBW", 7)); // 3
 
         System.out.println(solution.minimumRecolors("WBWBBBW", 2)); // 0
+
+        // blocks = "WBBWWWWBBWWBBBBWWBBWWBBBWWBBBWWWBWBWW", k = 15
+        System.out.println(solution.minimumRecolors("WBBWWWWBBWWBBBBWWBBWWBBBWWBBBWWWBWBWW", 15)); // 6
     }
 }
