@@ -42,5 +42,11 @@ public class Main {
         System.out.println(solution.maximumCount(new int[]{-3, -2, -1, 0, 0, 1, 2})); // 3
 
         System.out.println(solution.maximumCount(new int[]{5, 20, 66, 1314})); // 4
+
+        // nums = [-1764,-1562,-1226,-1216,-402,-386,-133,979,1227,1992]
+        System.out.println(solution.maximumCount(new int[]{-1764, -1562, -1226, -1216, -402, -386, -133, 979, 1227, 1992})); // 7
+
+        // nums = [-1]
+        System.out.println(solution.maximumCount(new int[]{-1})); // 1
     }
 }
