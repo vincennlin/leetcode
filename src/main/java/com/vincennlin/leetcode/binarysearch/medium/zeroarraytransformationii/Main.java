@@ -58,5 +58,8 @@ public class Main {
         System.out.println(solution.minZeroArray(new int[]{2, 0, 2}, new int[][]{{0, 2, 1}, {0, 2, 1}, {1, 1, 3}})); // 2
 
         System.out.println(solution.minZeroArray(new int[]{4, 3, 2, 1}, new int[][]{{1, 3, 2}, {0, 2, 1}})); // -1
+
+        // nums = [5], queries = [[0,0,5],[0,0,1],[0,0,3],[0,0,2]]
+        System.out.println(solution.minZeroArray(new int[]{5}, new int[][]{{0, 0, 5}, {0, 0, 1}, {0, 0, 3}, {0, 0, 2}})); // 1
     }
 }
