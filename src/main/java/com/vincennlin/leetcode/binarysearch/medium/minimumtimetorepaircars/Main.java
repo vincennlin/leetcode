@@ -44,5 +44,11 @@ public class Main {
         System.out.println(solution.repairCars(new int[]{4, 2, 3, 1}, 10)); // 16
 
         System.out.println(solution.repairCars(new int[]{5, 1, 8}, 6)); // 16
+
+        // ranks = [1,1,3,3], cars = 74
+        System.out.println(solution.repairCars(new int[]{1, 1, 3, 3}, 74)); // 576
+
+        // ranks = [3, 3, 2], cars = 51
+        System.out.println(solution.repairCars(new int[]{3, 3, 2}, 51)); // 768
     }
 }
