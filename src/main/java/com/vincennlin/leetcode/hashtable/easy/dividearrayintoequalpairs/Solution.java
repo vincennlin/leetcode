@@ -1,13 +1,21 @@
 package com.vincennlin.leetcode.hashtable.easy.dividearrayintoequalpairs;
+
+import java.util.HashSet;
+import java.util.Set;
+
 // 2206
 class Solution {
     public boolean divideArray(int[] nums) {
-        int bit = 0;
+        Set<Integer> set = new HashSet<>();
 
         for (int num : nums) {
-            bit ^= num;
+            if (!set.contains(num)) {
+                set.add(num);
+            } else {
+                set.remove(num);
+            }
         }
 
-        return bit == 0;
+        return set.isEmpty();
     }
 }
