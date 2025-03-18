@@ -40,5 +40,8 @@ public class Main {
         System.out.println(solution.longestNiceSubarray(new int[]{1, 3, 8, 48, 10})); // 3
 
         System.out.println(solution.longestNiceSubarray(new int[]{3, 1, 5, 11, 13})); // 1
+
+        // nums = [135745088,609245787,16,2048,2097152]
+        System.out.println(solution.longestNiceSubarray(new int[]{135745088, 609245787, 16, 2048, 2097152})); // 3
     }
 }
